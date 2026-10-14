@@ -1,0 +1,20 @@
+{
+  "name": "youknowrd1-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Official cinematic portfolio of Rohan (youknowrd1) — Director, Editor & Visual Storyteller",
+  "scripts": {
+    "dev": "python -m http.server 4173",
+    "start": "python -m http.server 4173",
+    "build": "echo 'Static production site ready for Vercel deployment'"
+  },
+  "keywords": [
+    "portfolio",
+    "director",
+    "editor",
+    "visual-storyteller",
+    "cinematography"
+  ],
+  "author": "Rohan Dongare",
+  "license": "MIT"
+}

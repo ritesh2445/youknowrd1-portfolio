@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50">
+  <rect x="6" y="10" width="30" height="30" rx="6" fill="#FFC915"/>
+  <path d="M16 32V18h6c3.2 0 5 1.8 5 4.3 0 1.9-1.2 3.4-3 3.9l3.5 5.8h-3.4l-3.1-5.1h-1.8V32H16zm3.2-7.5h2.5c1.4 0 2.2-.7 2.2-2s-.8-2-2.2-2h-2.5v4z" fill="#000000"/>
+  <text x="44" y="33" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="800" fill="#FFC915" letter-spacing="1">realme</text>
+</svg>

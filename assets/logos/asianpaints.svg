@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 50">
+  <path d="M8 35L17 11l9 24h-5.5l-3.5-9.5-3.5 9.5H8z" fill="#E31E24"/>
+  <path d="M26 11l6 16 6-16h5.5l-9 24h-5.5l-8.5-24H26z" fill="#FFC915"/>
+  <text x="56" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#ffffff">asian</text>
+  <text x="110" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#E31E24">paints</text>
+</svg>

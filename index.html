@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>youknowrd1 — Rohan | Director, Editor &amp; Visual Storyteller</title>
+  <meta name="description" content="Official cinematic portfolio of Rohan (youknowrd1). Filmmaker and video editor with 4+ years creating high-octane campaigns for Realme, Adidas, H&amp;M, SNITCH, Asian Paints, Glenmark, Fabelle, and public figures.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Preconnect to Vimeo CDN for sub-second video loading -->
+  <link rel="preconnect" href="https://player.vimeo.com" crossorigin>
+  <link rel="preconnect" href="https://i.vimeocdn.com" crossorigin>
+  <link rel="preconnect" href="https://f.vimeocdn.com" crossorigin>
+  <link rel="dns-prefetch" href="https://player.vimeo.com">
+  <link rel="dns-prefetch" href="https://i.vimeocdn.com">
+
+  <!-- Luxury Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <style>
+    /* ==========================================================================
+       PITCH BLACK 1 CR PRODUCTION SYSTEM (LIQUID GLASS & PERFECT GEOMETRY)
+       ========================================================================== */
+    :root {
+      --bg-pitch: #000000;
+      --bg-surface: #080a08;
+      --bg-card: #0d110d;
+      --lime: #c8ff48;
+      --lime-neon: #dcff66;
+      --lime-glow: rgba(200, 255, 72, 0.45);
+      --cyan-neon: #00ffd5;
+      --line: rgba(255, 255, 255, 0.08);
+      --text: #f5f8f2;
+      --text-muted: #a6b0a0;
+      --font-display: 'Libre Franklin', sans-serif;
+      --font-grotesk: 'Space Grotesk', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      --font-syne: 'Syne', sans-serif;
+      --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background-color: var(--bg-pitch);
+      color: var(--text);
+      font-family: var(--font-display);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-pitch);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* 35mm Analog Film Grain */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 900;
+      opacity: 0.08;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    .mono { font-family: var(--font-mono); }
+    .font-grotesk { font-family: var(--font-grotesk); }
+    .font-syne { font-family: var(--font-syne); }
+    .rule { border-color: var(--line); }
+
+    /* iOS Liquid Glass Header */
+    .ios-liquid-glass {
+      background: rgba(8, 11, 9, 0.55);
+      -webkit-backdrop-filter: blur(28px) saturate(200%) contrast(105%);
+      backdrop-filter: blur(28px) saturate(200%) contrast(105%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    /* ==========================================================================
+       CANVA-STYLE 3D MASTER CHROME TYPOGRAPHY
+       (7-STOP METALLIC REFLECTION GRADIENT, HIGH-VOLTAGE LIME BEVEL STROKE & 3D EXTRUSION)
+       ========================================================================== */
+    .chrome-type, .mark-face {
+      display: inline-block;
+      font-weight: 900;
+      line-height: 1.02;
+      letter-spacing: -0.09em;
+      padding-right: 0.08em;
+      white-space: nowrap;
+      color: #d5ded3;
+      background: linear-gradient(168deg, #ffffff 4%, #758176 20%, #f6fff2 34%, #343d37 52%, #e5f4d2 68%, #67736b 80%, #ffffff 92%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1.5px rgba(200, 255, 72, 0.7);
+      text-shadow: 2px 3px 0 #3b4638, 4px 5px 0 #202a21, 7px 9px 0 #111811, 14px 20px 24px rgba(0, 0, 0, 0.95);
+      filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 22px rgba(200, 255, 72, 0.45));
+    }
+
+    /* Ambient Cursor Spotlight */
+    .ambient-spotlight {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 750px;
+      height: 750px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 255, 72, 0.05) 0%, rgba(10, 35, 15, 0.03) 40%, transparent 70%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      will-change: transform;
+    }
+
+    /* Moving Wordmark: Accurately at Top-Left (not slightly down), Glides to Bottom-Right on scroll */
+    .floating-mark {
+      position: fixed;
+      z-index: 55;
+      pointer-events: none;
+      transform-origin: 0 50%;
+      will-change: transform, left, top;
+      filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 18px rgba(200, 255, 72, 0.35));
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Auto-Moving Infinite Logo Marquee */
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeInfinite 24s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeInfinite {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Brand Logo Pill (Full-color with glass rounded frame, no overlap) */
+    .brand-logo-pill {
+      background: rgba(14, 18, 14, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 9999px;
+      padding: 0.85rem 2.2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 185px;
+      height: 72px;
+      flex-shrink: 0;
+      transition: all 0.35s var(--ease-cinema);
+    }
+
+    .brand-logo-pill:hover {
+      background: rgba(22, 30, 22, 0.95);
+      border-color: var(--lime);
+      box-shadow: 0 0 25px rgba(200, 255, 72, 0.25), inset 0 0 15px rgba(200, 255, 72, 0.08);
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .brand-logo-pill img {
+      max-height: 38px;
+      max-width: 130px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .brand-logo-pill:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Interactive 3D Card with Edge Lighting */
+    .project-card-3d {
+      background: var(--bg-surface);
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: transform 0.4s var(--ease-cinema), border-color 0.4s, box-shadow 0.4s;
+      transform-style: preserve-3d;
+      will-change: transform;
+      position: relative;
+    }
+
+    .project-card-3d:hover {
+      border-color: var(--lime);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.98), 0 0 35px rgba(200, 255, 72, 0.22);
+    }
+
+    .project-card-3d img {
+      transition: transform 0.8s var(--ease-cinema), filter 0.6s;
+      filter: saturate(0.95) contrast(1.1);
+    }
+
+    .project-card-3d:hover img {
+      transform: scale(1.06);
+      filter: saturate(1.15) contrast(1.15);
+    }
+
+    /* 3D Motion Rings Stage */
+    .motion-stage {
+      background: radial-gradient(circle at 56% 49%, #1e2c16 0%, #0d140e 30%, #000000 75%);
+      position: relative;
+      overflow: hidden;
+      perspective: 1000px;
+      border: 1px solid var(--line);
+      border-radius: 2rem;
+    }
+
+    .motion-ring {
+      position: absolute;
+      width: 290px;
+      aspect-ratio: 1;
+      border: 1.5px solid rgba(200, 255, 72, 0.65);
+      border-radius: 50%;
+      box-shadow: inset 0 0 40px rgba(200, 255, 72, 0.25), 0 0 55px rgba(200, 255, 72, 0.25);
+      transform: rotateX(67deg) rotate(-23deg);
+      animation: ringFloat 8s ease-in-out infinite alternate;
+    }
+
+    .motion-ring:nth-child(2) {
+      width: 420px;
+      transform: rotateX(60deg) rotate(28deg);
+      animation-delay: -3.5s;
+    }
+
+    @keyframes ringFloat {
+      to { transform: rotateX(67deg) rotate(-10deg) translateY(-28px); }
+    }
+
+    /* Rounded Action Buttons */
+    .lime-button {
+      background: var(--lime);
+      color: #000000;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 34px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid var(--lime);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s var(--ease-cinema);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lime-button:hover {
+      background: var(--lime-neon);
+      box-shadow: 0 0 35px var(--lime-glow);
+      transform: translateY(-2px);
+    }
+
+    .outline-button {
+      background: transparent;
+      color: #f2f4ed;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 34px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s var(--ease-cinema);
+    }
+
+    .outline-button:hover {
+      background: var(--lime);
+      color: #000000;
+      border-color: var(--lime);
+      box-shadow: 0 0 30px rgba(200, 255, 72, 0.35);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       CINEMATIC 35MM APERTURE SHUTTER INTRO (SILKY SMOOTH LUXURY TRANSITION)
+       ========================================================================== */
+    #shutterRoot {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      pointer-events: auto;
+      transition: visibility 1.35s ease;
+    }
+
+    .shutter-curtain {
+      position: fixed;
+      left: 0;
+      right: 0;
+      height: 50.5vh;
+      background: #000000;
+      z-index: 10001;
+      transition: transform 1.25s cubic-bezier(0.19, 1, 0.22, 1);
+      will-change: transform;
+    }
+
+    .shutter-top {
+      top: 0;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 1px 0 rgba(200, 255, 72, 0.12);
+    }
+
+    .shutter-bottom {
+      bottom: 0;
+      box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.95), 0 -1px 0 rgba(200, 255, 72, 0.12);
+    }
+
+    /* Silky-smooth parting blades */
+    .shutter-opened .shutter-top {
+      transform: translateY(-101%);
+    }
+
+    .shutter-opened .shutter-bottom {
+      transform: translateY(101%);
+    }
+
+    /* HUD gently dissolves and lifts upward */
+    .shutter-hud {
+      position: fixed;
+      inset: 0;
+      z-index: 10005;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
+    }
+
+    .shutter-opened .shutter-hud {
+      opacity: 0;
+      transform: scale(0.96) translateY(-14px);
+      pointer-events: none !important;
+    }
+
+    .shutter-opened {
+      pointer-events: none !important;
+    }
+
+    /* Completely hide lightning on main page */
+    .shutter-opened #lightningCanvas {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+
+    /* Electric Lightning Canvas Engine */
+    #lightningCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 10002;
+      display: block;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Soft Anamorphic Bloom Flash */
+    .aperture-flash {
+      position: fixed;
+      inset: 0;
+      z-index: 10003;
+      background: radial-gradient(circle at center, rgba(200, 255, 72, 0.32) 0%, rgba(0, 255, 213, 0.12) 35%, transparent 70%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .aperture-flash.active {
+      opacity: 1;
+    }
+
+    /* Hero Video: Pure pitch-black loading with zero image/poster flash */
+    #heroVideo {
+      opacity: 0;
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      background-color: #000000;
+    }
+
+    #heroVideo.is-playing {
+      opacity: 1;
+    }
+
+    /* Hero Inactivity Auto-Fade */
+    .hero-hud-layer {
+      transition: opacity 0.8s var(--ease-cinema);
+    }
+
+    .hero-hud-layer.faded {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Vimeo Cinema Modal */
+    .vimeo-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.97);
+      backdrop-filter: blur(25px);
+      z-index: 20000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .vimeo-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .vimeo-modal-window {
+      width: 100%;
+      max-width: 1100px;
+      background: #0a0d0a;
+      border: 1px solid var(--lime);
+      box-shadow: 0 0 70px rgba(200, 255, 72, 0.3);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transform: scale(0.95);
+      transition: transform 0.35s var(--ease-cinema);
+    }
+
+    .vimeo-modal.active .vimeo-modal-window {
+      transform: scale(1);
+    }
+    /* Hardware Accelerated Video Host (Continuous Autoplay, Zero Jitter) */
+    .project-card-item {
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+
+    .video-host {
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      contain: strict;
+    }
+
+    .video-host iframe {
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+  </style>
+</head>
+<body class="w-full bg-black">
+
+  <!-- Ambient Dynamic Spotlight Following Cursor -->
+  <div id="ambientSpotlight" class="ambient-spotlight"></div>
+
+  <!-- ==========================================================================
+       CINEMATIC INTRO: PROCEDURAL ELECTRIC LIGHTNING & ANAMORPHIC SHUTTER
+       (NEVER AUTOMATIC — ONLY ENTERS WHEN USER CLICKS ENTER)
+       ========================================================================== -->
+  <div id="shutterRoot">
+    <!-- Top & Bottom Anamorphic Shutter Blades -->
+    <div class="shutter-curtain shutter-top"></div>
+    <div class="shutter-curtain shutter-bottom"></div>
+    
+    <!-- Real-Time Procedural Electric Lightning Canvas -->
+    <canvas id="lightningCanvas"></canvas>
+    
+    <div id="apertureFlash" class="aperture-flash"></div>
+
+    <!-- Center Badass HUD Stage -->
+    <div id="shutterHud" class="shutter-hud">
+      <!-- 3D Chrome Title -->
+      <div class="mb-5 text-center">
+        <span class="mark-face text-[clamp(44px,10vw,120px)] block leading-none">
+          youknowrd1
+        </span>
+      </div>
+
+      <!-- High-Speed Counter Display with Lightning Spikes -->
+      <div class="flex flex-col items-center gap-2 mb-6 text-center">
+        <div class="flex items-baseline gap-3 font-mono">
+          <span class="text-xs text-[#c8ff48] tracking-widest">SYSTEM CALIBRATION:</span>
+          <span id="calibrationPercent" class="font-bold text-4xl sm:text-5xl text-white tracking-widest">000%</span>
+        </div>
+        <p id="calibrationStatus" class="font-mono text-xs text-[#a6b0a0] tracking-widest uppercase">
+          CHARGING CAPACITORS &bull; SYNCHRONIZING 24 FPS TIMECODE...
+        </p>
+      </div>
+
+      <!-- Rohan's Welcome Statement -->
+      <div class="max-w-xl text-center mb-8 px-4">
+        <h2 class="font-grotesk font-extrabold text-xl sm:text-2xl text-white uppercase mb-2">
+          ROHAN // DIRECTOR &bull; EDITOR
+        </h2>
+        <p class="font-mono text-xs text-[#c8ff48]">
+          "WE DON'T JUST SHOOT FRAMES. WE CREATE STORIES THAT MOVE BRANDS FORWARD."
+        </p>
+      </div>
+
+      <!-- Manual Action Button to Enter Site -->
+      <button id="openShutterBtn" onclick="enterCinematicSuite()" class="lime-button font-black text-sm tracking-widest shadow-[0_0_40px_rgba(200,255,72,0.45)]">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        ENTER CINEMATIC SUITE
+      </button>
+
+      <span class="font-mono text-[11px] text-[#c8ff48]/80 tracking-widest uppercase mt-6 flex items-center gap-2">
+        <kbd class="px-2 py-0.5 rounded bg-white/10 border border-white/20 text-white font-mono text-[11px]">ENTER ↵</kbd>
+        <span>PRESS ENTER KEY OR CLICK TO ENTER</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SITE HEADER: IOS LIQUID GLASS EFFECT
+       ========================================================================== -->
+  <header id="siteHeader" class="sticky top-0 z-40 ios-liquid-glass">
+    <nav class="w-full max-w-7xl mx-auto px-5 sm:px-8 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Wordmark Space (Top-Left aligned anchor) -->
+      <div class="flex items-center gap-4">
+        <a id="headerLogoAnchor" class="flex items-center gap-3 text-decoration-none relative select-none" href="#top">
+          <!-- Width placeholder so layout remains rock-solid while floating mark sits at top-left -->
+          <span class="mark-face text-[24px] sm:text-[28px] opacity-0 select-none block leading-none pointer-events-none">
+            youknowrd1
+          </span>
+        </a>
+
+        <!-- Live Camera Telemetry HUD -->
+        <div class="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/10 mono text-[11px]">
+          <span class="w-2 h-2 rounded-full bg-[#ff3344] animate-pulse"></span>
+          <span class="text-[#c8ff48]">REC</span>
+          <span class="text-white/30">|</span>
+          <span class="text-white/70" id="headerTimecode">00:00:00:00</span>
+        </div>
+      </div>
+      
+      <!-- Clean Navigation Links -->
+      <div class="flex gap-4 sm:gap-8 items-center mono text-sm">
+        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors" href="#work">Work</a>
+        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors" href="#brands">Brands</a>
+        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors" href="#about">About</a>
+        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors hidden sm:inline" href="#experience">Experience</a>
+        
+        <!-- Direct Prewritten Mail Trigger Button -->
+        <a class="lime-button py-2 px-6 text-xs font-bold" href="mailto:rohandongare97@gmail.com?subject=DIRECTOR%20%2F%20EDITOR%20COMMISSION%20%E2%80%94%20COMMERCIAL%20PROJECT&body=Hey%20Rohan%2C%0A%0AWe%20saw%20your%20cinematic%20portfolio%20and%20want%20to%20collaborate%20on%20an%20upcoming%20project.%0A%0AProject%20Scope%3A%20%5BCommercial%20Film%20%2F%20Brand%20Campaign%20%2F%20BTS%20Feature%5D%0ABrand%20%2F%20Client%3A%20%0AShoot%20Timeline%3A%20%0ABudget%20Scope%3A%20%0A%0ALet%27s%20create%20something%20legendary.%0A%0ABest%20regards%2C%0A%5BYour%20Name%20%2F%20Agency%5D">
+          BOOK ROHAN
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       3D MOVING WORDMARK
+       (SITS PROPERLY AT TOP-LEFT, GLIDES TO VERY END OF BOTTOM-RIGHT ON SCROLL)
+       ========================================================================== -->
+  <div id="floating-mark" class="floating-mark" aria-hidden="true">
+    <span class="mark-face text-[24px] sm:text-[28px] block leading-none">youknowrd1</span>
+  </div>
+
+  <main id="top">
+
+    <!-- ==========================================================================
+         HERO SECTION: 100% PURE FULLSCREEN UNCOMPRESSED VIDEO
+         (NO POSTER IMAGE FLASH, PITCH BLACK BACKGROUND, VANISHES ON 2S IDLE)
+         ========================================================================== -->
+    <section id="heroSection" class="relative w-screen h-screen overflow-hidden bg-black flex flex-col justify-end">
+      
+      <!-- Fullscreen Background Vimeo Engine: Loads <1s, zero vimeo frame or controls -->
+      <div class="absolute inset-0 w-full h-full overflow-hidden bg-black pointer-events-none">
+        <iframe
+          id="heroVimeoIframe"
+          src="https://player.vimeo.com/video/1235595188?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+          class="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 object-cover border-0 transition-opacity duration-700 opacity-100"
+          allow="autoplay; fullscreen; picture-in-picture"
+          loading="eager"
+          title="Hero Cinematic Showreel">
+        </iframe>
+      </div>
+
+      <!-- Anamorphic Laser Flare Accent -->
+      <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#c8ff48]/40 to-transparent shadow-[0_0_30px_rgba(200,255,72,0.2)] pointer-events-none"></div>
+
+      <!-- Hero HUD Layer (Vanishes after 2s of inactivity, reappears on scroll) -->
+      <div id="heroHudLayer" class="hero-hud-layer relative z-20 w-full px-6 sm:px-10 py-6 bg-gradient-to-t from-black/90 via-black/35 to-transparent flex flex-wrap items-center justify-between gap-4">
+        
+        <div class="flex items-center gap-3">
+          <!-- Unmute / Sound Toggle -->
+          <button id="heroSoundBtn" class="flex items-center gap-2 px-4 py-2 rounded-full bg-black/80 border border-white/20 text-[#c8ff48] mono text-xs hover:border-[#c8ff48] transition-colors cursor-pointer">
+            <span id="heroSoundIcon">🔇</span>
+            <span id="heroSoundText">UNMUTE</span>
+          </button>
+
+          <!-- True Fullscreen Theater Mode Button -->
+          <button id="toggleFullscreenBtn" class="flex items-center gap-2 px-4 py-2 rounded-full bg-black/80 border border-white/20 text-white/90 hover:text-[#c8ff48] hover:border-[#c8ff48] mono text-xs transition-colors cursor-pointer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+            <span id="fullscreenBtnText">FULLSCREEN THEATER</span>
+          </button>
+        </div>
+
+        <a href="#work" class="flex items-center gap-2 mono text-xs tracking-widest uppercase text-white/80 hover:text-[#c8ff48] transition-colors">
+          <span>EXPLORE SELECTED WORK</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CORE IDENTITY STATEMENT (CLEAN PITCH BLACK & SUBTLE GLOW)
+         ========================================================================== -->
+    <section class="border-b rule px-5 sm:px-8 py-20 sm:py-28 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,#152210_0%,#060805_50%,#000000_100%)] relative overflow-hidden">
+      <div class="max-w-7xl mx-auto relative z-10">
+        <p class="mono text-xs uppercase tracking-widest text-[#c8ff48] mb-4">
+          INDEPENDENT CREATIVE PRACTICE &bull; 4+ YEARS EXPERIENCE
+        </p>
+        
+        <h1 class="font-black tracking-tighter leading-[0.95] text-4xl sm:text-6xl md:text-7xl text-[#f5f8f2] max-w-5xl mb-8">
+          FRAMES THAT FEEL. STORIES THAT STAY.
+        </h1>
+
+        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-8 pt-4 border-t rule">
+          <div class="max-w-xl">
+            <p class="font-semibold text-lg text-[#f5f8f2] mb-2">
+              Filmmaker &bull; Video Editor &bull; Visual Storyteller
+            </p>
+            <p class="text-[#a6b0a0] leading-relaxed">
+              Crafting stories that move brands forward. From being behind the camera to bringing stories to life in the edit — with a focus on visuals that feel cinematic, intentional, and true to each brand's vision.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-4 shrink-0">
+            <a class="lime-button" href="#work">EXPLORE MY WORK</a>
+            <a class="outline-button" href="mailto:rohandongare97@gmail.com?subject=DIRECTOR%20%2F%20EDITOR%20COMMISSION&body=Hey%20Rohan%2C%20let%27s%20create%20something%20extraordinary%20together.">LET'S COLLABORATE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         AUTO-MOVING HORIZONTAL ROW WITH REAL COLORED BRAND LOGO IMAGES
+         ========================================================================== -->
+    <section id="brands" class="py-14 border-b rule bg-black relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-5 mb-6 flex items-center justify-between">
+        <span class="mono text-xs uppercase tracking-widest text-[#c8ff48]">CLIENTS &amp; COLLABORATORS</span>
+        <span class="mono text-xs text-white/40 hidden sm:inline-block">OFFICIAL BRAND PARTNERSHIPS</span>
+      </div>
+
+      <!-- Continuous Infinite Horizontal Marquee (Full Color SVGs, Zero Overlaps) -->
+      <div class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]">
+        <div class="marquee-track flex items-center gap-6 py-2">
+          
+          <!-- Colored Brand Logo Images -->
+          <div class="brand-logo-pill"><img src="assets/logos/realme.svg" alt="Realme colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/adidas.svg" alt="Adidas colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/hm.svg" alt="H&amp;M colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/snitch.svg" alt="SNITCH colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/asianpaints.svg" alt="Asian Paints colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/glenmark.svg" alt="Glenmark colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/fabelle.svg" alt="Fabelle Chocolates colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/lenskart.svg" alt="Lenskart colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/bonkers.svg" alt="Bonkers colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/samsung.svg" alt="Samsung colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/levis.svg" alt="Levi's colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/gshock.svg" alt="G-SHOCK colored logo"></div>
+
+          <div class="brand-logo-pill"><img src="assets/logos/yesbank.svg" alt="Yes Bank colored logo"></div>
+
+          <!-- Duplicate Set for Seamless Continuous Infinite Scrolling -->
+          <div class="brand-logo-pill"><img src="assets/logos/realme.svg" alt="Realme colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/adidas.svg" alt="Adidas colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/hm.svg" alt="H&amp;M colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/snitch.svg" alt="SNITCH colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/asianpaints.svg" alt="Asian Paints colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/glenmark.svg" alt="Glenmark colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/fabelle.svg" alt="Fabelle Chocolates colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/lenskart.svg" alt="Lenskart colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/bonkers.svg" alt="Bonkers colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/samsung.svg" alt="Samsung colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/levis.svg" alt="Levi's colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/gshock.svg" alt="G-SHOCK colored logo"></div>
+          <div class="brand-logo-pill"><img src="assets/logos/yesbank.svg" alt="Yes Bank colored logo"></div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         01 / THE WORK: FULL-BLEED ZERO-GAP VIDEO SHOWCASE (16:9 & 9:16 NATIVE)
+         ========================================================================== -->
+    <section id="work" class="px-5 sm:px-8 py-20 sm:py-28 bg-black border-b rule">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-6">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-2 h-2 rounded-full bg-[#c8ff48] animate-pulse"></span>
+              <p class="mono text-xs uppercase tracking-widest text-[#c8ff48]">01 / LIVE PORTFOLIO SHOWCASE</p>
+            </div>
+            <h2 class="font-black tracking-tight text-3xl sm:text-5xl text-[#f5f8f2]">Selected Work.</h2>
+          </div>
+          <p class="mono text-xs text-[#a6b0a0] max-w-md leading-relaxed">
+            Full-bleed cinematic video frames with zero letterboxing. Native 16:9 Widescreen &bull; Native 9:16 Vertical Reels. Click any project to screen in high-fidelity Theater mode.
+          </p>
+        </div>
+
+        <!-- Interactive Filter Bar -->
+        <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-3 mb-10 no-scrollbar select-none">
+          <button class="filter-btn active mono text-xs font-bold px-4 py-2 rounded-full border border-[#c8ff48] bg-[#c8ff48] text-black transition-all cursor-pointer shrink-0" data-filter="all">
+            ALL WORKS (10)
+          </button>
+          <button class="filter-btn mono text-xs font-bold px-4 py-2 rounded-full border border-white/20 bg-[#0d120d] text-white hover:border-[#c8ff48] transition-all cursor-pointer shrink-0" data-filter="16-9">
+            16:9 COMMERCIALS (4)
+          </button>
+          <button class="filter-btn mono text-xs font-bold px-4 py-2 rounded-full border border-white/20 bg-[#0d120d] text-white hover:border-[#c8ff48] transition-all cursor-pointer shrink-0" data-filter="9-16">
+            9:16 VERTICAL REELS (6)
+          </button>
+          <div class="h-5 w-px bg-white/20 shrink-0 mx-1"></div>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="realme">
+            REALME (3)
+          </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="adidas">
+            ADIDAS (2)
+          </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="lenskart">
+            LENSKART
+          </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="asian-paints">
+            ASIAN PAINTS
+          </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="yes-bank">
+            YES BANK
+          </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="bonkers">
+            BONKERS
+          </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="shubman-gill">
+            SHUBMAN GILL
+          </button>
+        </div>
+
+        <!-- SECTION A: 16:9 COMMERCIAL FILMS (Gap-Free 2-Column Grid) -->
+        <div id="commercialsSection" class="work-category-group mb-12 sm:mb-16">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="mono text-xs uppercase tracking-widest text-[#c8ff48] font-bold">COMMERCIAL FILMS &bull; 16:9 WIDESCREEN</span>
+            <div class="h-px flex-1 bg-white/10"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            
+            <!-- 1. Asian Paints (16:9) -->
+            <article class="project-card-item relative w-full aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="16-9" data-brand="asian-paints" data-vid="1235587416" onclick="openVimeoModal('1235587416', 'Asian Paints — Sydney Narrative', 'Architectural Commercial Film', '16/9')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2211883797-f0682535535edaee12f99073bad614cebfaa2aeda4d0464a391ef4ba27f4ddd0-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1235587416?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Asian Paints — Sydney Narrative">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <!-- Top Badges -->
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  16:9 FILM &bull; ASIAN PAINTS
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE STREAM
+                </span>
+              </div>
+
+              <!-- Bottom Overlay -->
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-4 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-lg sm:text-2xl text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Asian Paints — Sydney Cut</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Architectural lighting, color narrative & international production</p>
+                </div>
+                <button class="pointer-events-auto px-4 py-2 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_20px_rgba(200,255,72,0.4)] flex items-center gap-1.5 shrink-0 cursor-pointer">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 2. Realme Commercial (16:9) -->
+            <article class="project-card-item relative w-full aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="16-9" data-brand="realme" data-vid="1235564202" onclick="openVimeoModal('1235564202', 'Realme — Flagship Commercial Film', 'Flagship Product Film', '16/9')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2211843393-411295d14a644869ece46ac5a7db28e8d4f3fe09488f573ce0f95fd12f39a1a8-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1235564202?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Realme — Flagship Commercial Film">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  16:9 FILM &bull; REALME
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE STREAM
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-4 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-lg sm:text-2xl text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Realme — Product Commercial</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Futuristic flagship reveal with motion design & precision CGI</p>
+                </div>
+                <button class="pointer-events-auto px-4 py-2 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_20px_rgba(200,255,72,0.4)] flex items-center gap-1.5 shrink-0 cursor-pointer">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 3. Yes Bank (16:9) -->
+            <article class="project-card-item relative w-full aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="16-9" data-brand="yes-bank" data-vid="1235564203" onclick="openVimeoModal('1235564203', 'Yes Bank — Commercial Film', 'Brand Commercial Film', '16/9')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2211844147-89914e644d0c7976e3573ef11839310bb0213ce46259ba5e8d858454b578390c-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1235564203?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Yes Bank — Commercial Film">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  16:9 FILM &bull; YES BANK
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE STREAM
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-4 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-lg sm:text-2xl text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Yes Bank — Brand Film</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Corporate narrative, human emotion, and polished cinematic direction</p>
+                </div>
+                <button class="pointer-events-auto px-4 py-2 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_20px_rgba(200,255,72,0.4)] flex items-center gap-1.5 shrink-0 cursor-pointer">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 4. Realme Campaign Cut 3 (16:9) -->
+            <article class="project-card-item relative w-full aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="16-9" data-brand="realme" data-vid="1235587463" onclick="openVimeoModal('1235587463', 'Realme — Campaign Cut 3', 'Campaign Commercial Cut', '16/9')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2211876334-52c9aed7f199b1f5bf96dd4b14a0b6f0b3d11f840d641a1e2858500500d01e0b-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1235587463?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Realme — Campaign Cut 3">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  16:9 FILM &bull; REALME #3
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE STREAM
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-4 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-lg sm:text-2xl text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Realme — Campaign Cut</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">High-definition visual storytelling, color grade and edit</p>
+                </div>
+                <button class="pointer-events-auto px-4 py-2 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_20px_rgba(200,255,72,0.4)] flex items-center gap-1.5 shrink-0 cursor-pointer">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- SECTION B: 9:16 VERTICAL REELS (Gap-Free 3-Column Grid) -->
+        <div id="reelsSection" class="work-category-group">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="mono text-xs uppercase tracking-widest text-[#c8ff48] font-bold">VERTICAL REELS &bull; 9:16 MOBILE-FIRST 4K</span>
+            <div class="h-px flex-1 bg-white/10"></div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            
+            <!-- 5. Lenskart (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="lenskart" data-vid="1235587443" onclick="openVimeoModal('1235587443', 'Lenskart — High Fashion Eyewear', 'Fashion Commercial Reel', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2211883656-1355cb900ee43bdd876688d1d574f03b858c5b3f74abcca76fa2579ba21ce0e6-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1235587443?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Lenskart — High Fashion Eyewear">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; LENSKART
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Lenskart</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">High-fashion optical aesthetic</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 6. Adidas 1 (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="adidas" data-vid="1235587415" onclick="openVimeoModal('1235587415', 'Adidas T-20 Jersey — Match Day Cut', 'Athletic Campaign Reel', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2211882711-7a9e1333952aade3da9ee71a27daf70216393e9c460b4450bcc248d73df7275c-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1235587415?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Adidas T-20 Jersey — Match Day Cut">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; ADIDAS #1
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Adidas T-20 Jersey</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">High-speed athletic campaign</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 7. Adidas 2 (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="adidas" data-vid="1235587418" onclick="openVimeoModal('1235587418', 'Adidas T-20 Jersey — Intensity Sequence', 'Brand Campaign Film', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2211880252-c6b333f78b501ee6007e6289b10c3fe4735518324687286e7c363ddbe5832677-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1235587418?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Adidas T-20 Jersey — Intensity Sequence">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; ADIDAS #2
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Adidas T-20 Intensity</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Kinetic cuts & sound design</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 8. Bonkers (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="bonkers" data-vid="1235587412" onclick="openVimeoModal('1235587412', 'Bonkers Corner — Streetwear Velocity', 'Streetwear Fashion Cut', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2211869829-fa0ca77cd49e2ac8218b76d5c1f7eb5ba6a81b78fa3dd5b06edc7fa12dc9f280-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1235587412?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Bonkers Corner — Streetwear Velocity">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; BONKERS
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Bonkers Corner</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Streetwear pacing & sync</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 9. Realme Stage Reel (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="realme" data-vid="1235572606" onclick="openVimeoModal('1235572606', 'Realme — Final Stage Reveal Reel', 'Flagship Stage Reel', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2211850495-a03d5ec0b8e081a7d672cc07a43b58f354ed5d01fa2963036bf0ef641ce1a768-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1235572606?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Realme — Final Stage Reveal Reel">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; REALME
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Realme Stage Reveal</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Arena energy & stage dynamics</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 10. Shubman Gill (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="shubman-gill" data-vid="1235568626" onclick="openVimeoModal('1235568626', 'Shubman Gill — Celebrity Collaboration & BTS', 'Celebrity Talent Shoot', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2211845984-d1887a08b4ebdd365d7cd968925ff2b9632611981a81a70f3cd9a1e7a3a9c31c-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1235568626?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Shubman Gill — Celebrity Collaboration & BTS">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; CELEBRITY
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Shubman Gill</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">High-speed athlete shoot & BTS</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         03 / ABOUT ROHAN & 3D MOTION STAGE
+         ========================================================================== -->
+    <section id="about" class="px-5 sm:px-8 py-24 sm:py-32 bg-black border-b rule">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        
+        <div>
+          <p class="mono text-xs uppercase tracking-widest text-[#c8ff48] mb-4">03 / ABOUT THE FILMMAKER</p>
+          <h2 class="font-bold tracking-tight text-3xl sm:text-5xl text-[#f5f8f2] mb-6">
+            Shoot. Create. Edit.
+          </h2>
+          <div class="space-y-5 text-[#a6b0a0] leading-relaxed">
+            <p class="text-[#f5f8f2] font-medium text-lg">
+              Filmmaker, video editor, and visual storyteller with 4+ years of experience shooting, editing, and creating content for brands, campaigns, and digital platforms.
+            </p>
+            <p>
+              I've had the opportunity to work with brands like <strong class="text-[#f5f8f2]">Realme, Adidas, H&amp;M, SNITCH, Asian Paints, Glenmark, and Fabelle Chocolates</strong> — across commercial shoots, brand campaigns, and BTS content.
+            </p>
+            <p>
+              I work across the full creative process — from being behind the camera to bringing stories to life in the edit — with a focus on visuals that feel cinematic, intentional, and true to each brand's vision.
+            </p>
+          </div>
+
+          <!-- Software Suite Pills -->
+          <div class="mt-8 pt-8 border-t rule">
+            <span class="mono text-xs text-[#c8ff48] uppercase tracking-wider block mb-3">SOFTWARE SUITE</span>
+            <div class="flex flex-wrap gap-2.5 mono text-xs">
+              <span class="px-4 py-2 bg-[#0d120d] border rule rounded-full text-[#f5f8f2]">Premiere Pro</span>
+              <span class="px-4 py-2 bg-[#0d120d] border rule rounded-full text-[#f5f8f2]">After Effects</span>
+              <span class="px-4 py-2 bg-[#0d120d] border rule rounded-full text-[#f5f8f2]">DaVinci Resolve</span>
+              <span class="px-4 py-2 bg-[#0d120d] border rule rounded-full text-[#f5f8f2]">Photoshop</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Motion Rings Stage -->
+        <div class="motion-stage min-h-[380px] sm:min-h-[460px] flex items-center justify-center p-8">
+          <div class="motion-ring"></div>
+          <div class="motion-ring"></div>
+          <div class="absolute w-2/3 h-px rotate-[-24deg] bg-[#c8ff48] shadow-[0_0_35px_9px_#c8ff4840]"></div>
+          <div class="relative px-8 py-5 border border-[#c8ff4870] bg-[#000000bd] mono text-[#c8ff48] tracking-[.3em] text-center text-sm rounded-full shadow-2xl">
+            FRAME / FORM / VISION
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04 / EXPERIENCE & TALENT HIGHLIGHTS
+         ========================================================================== -->
+    <section id="experience" class="px-5 sm:px-8 py-20 bg-black border-b rule">
+      <div class="max-w-7xl mx-auto">
+        <p class="mono text-xs uppercase tracking-widest text-[#c8ff48] mb-4">04 / EXPERIENCE</p>
+        <h2 class="font-bold tracking-tight text-2xl sm:text-4xl text-[#f5f8f2] mb-12">
+          Track Record &amp; Talent Collaborations
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-8 bg-[#0a0d0a] border rule rounded-2xl">
+            <span class="mono text-xs text-[#c8ff48] block mb-2">01 // BRAND CAMPAIGNS</span>
+            <p class="text-sm text-[#a6b0a0] leading-relaxed">
+              Collaborated with leading brands — Realme, Adidas, H&amp;M, SNITCH, Asian Paints, Glenmark, Fabelle Chocolates — and influencers/content creators to produce engaging videos for social and digital platforms.
+            </p>
+          </div>
+
+          <div class="p-8 bg-[#0a0d0a] border rule rounded-2xl">
+            <span class="mono text-xs text-[#c8ff48] block mb-2">02 // PUBLIC FIGURES &amp; BTS</span>
+            <p class="text-sm text-[#a6b0a0] leading-relaxed">
+              Produced BTS and talent-collaboration content with public figures including <strong class="text-white">Hardik Pandya, KL Rahul, Bhumi Pednekar, and Shubman Gill</strong>.
+            </p>
+          </div>
+
+          <div class="p-8 bg-[#0a0d0a] border rule rounded-2xl">
+            <span class="mono text-xs text-[#c8ff48] block mb-2">03 // END-TO-END DIRECTION</span>
+            <p class="text-sm text-[#a6b0a0] leading-relaxed">
+              Shot, conceptualized, and edited cinematic sequences and brand campaigns, shaping narrative and visual identity end-to-end.
+            </p>
+          </div>
+
+          <div class="p-8 bg-[#0a0d0a] border rule rounded-2xl">
+            <span class="mono text-xs text-[#c8ff48] block mb-2">04 // POST-PRODUCTION</span>
+            <p class="text-sm text-[#a6b0a0] leading-relaxed">
+              Delivered color grading, visual effects, and motion graphics that keep a consistent, polished brand aesthetic across projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         05 / DIRECT ACCESS & MAIL CHANNELS
+         ========================================================================== -->
+    <section id="contact" class="px-5 sm:px-8 py-24 sm:py-32 bg-black">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+        <div>
+          <p class="mono text-xs uppercase tracking-widest text-[#c8ff48] mb-4">05 / DIRECT ACCESS</p>
+          <h2 class="font-bold tracking-tight text-3xl sm:text-5xl text-[#f5f8f2] mb-6">
+            Let’s make cinematic history.
+          </h2>
+          <p class="text-[#a6b0a0] leading-relaxed max-w-md mb-8">
+            Commercial shoots, brand campaigns, editing, and BTS coverage. Reach out directly via email, phone, or instant transmission.
+          </p>
+
+          <!-- Direct Verified Channels with DIRECT MAIL ACTION -->
+          <div class="space-y-4 mono text-sm">
+            
+            <!-- Email Item with Direct MAIL BUTTON -->
+            <div class="p-5 rounded-2xl bg-[#0a0e0a] border rule flex items-center justify-between">
+              <div>
+                <span class="text-xs text-white/50 block">DIRECT EMAIL</span>
+                <a href="mailto:rohandongare97@gmail.com?subject=DIRECTOR%20%2F%20EDITOR%20COMMISSION&body=Hey%20Rohan%2C%20let%27s%20create%20something%20extraordinary%20together." class="text-[#c8ff48] font-bold hover:underline">
+                  rohandongare97@gmail.com
+                </a>
+              </div>
+              <a href="mailto:rohandongare97@gmail.com?subject=DIRECTOR%20%2F%20EDITOR%20COMMISSION%20%E2%80%94%20COMMERCIAL%20PROJECT&body=Hey%20Rohan%2C%0A%0AWe%20saw%20your%20cinematic%20portfolio%20and%20want%20to%20collaborate%20on%20an%20upcoming%20project.%0A%0AProject%20Scope%3A%20%5BCommercial%20Film%20%2F%20Brand%20Campaign%20%2F%20BTS%20Feature%5D%0ABrand%20%2F%20Client%3A%20%0AShoot%20Timeline%3A%20%0ABudget%20Scope%3A%20%0A%0ALet%27s%20create%20something%20legendary.%0A%0ABest%20regards%2C%0A%5BYour%20Name%20%2F%20Agency%5D" class="px-4 py-2 rounded-full bg-[#c8ff48] text-black font-bold hover:bg-white transition-colors text-xs inline-flex items-center gap-1.5 shadow-[0_0_15px_rgba(200,255,72,0.3)]">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                SEND MAIL
+              </a>
+            </div>
+
+            <!-- Phone Item with Call & WhatsApp -->
+            <div class="p-5 rounded-2xl bg-[#0a0e0a] border rule flex items-center justify-between">
+              <div>
+                <span class="text-xs text-white/50 block">PHONE / WHATSAPP</span>
+                <a href="tel:+917038039626" class="text-white font-bold hover:text-[#c8ff48]">
+                  +91 7038039626
+                </a>
+              </div>
+              <a href="https://wa.me/917038039626?text=Hey%20Rohan,%20saw%20your%20cinematic%20portfolio.%20Let's%20collaborate!" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-full bg-[#25D366]/20 border border-[#25D366]/50 text-[#25D366] hover:bg-[#25D366] hover:text-black transition-colors text-xs font-bold">
+                WHATSAPP
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Contact Form with Direct Mail Integration (Prewritten Email) -->
+        <form id="contactForm" class="space-y-4 bg-[#0a0e0a] p-6 sm:p-10 rounded-3xl border rule">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block mb-1.5 font-semibold text-xs mono uppercase text-[#c8ff48]" for="cfName">Your Name</label>
+              <input id="cfName" required placeholder="e.g. Alex Morgan" class="w-full bg-[#121612] border border-[#2d382b] text-[#f5f8f2] text-sm px-4 py-3 rounded-xl focus:border-[#c8ff48] focus:outline-none transition-colors">
+            </div>
+            <div>
+              <label class="block mb-1.5 font-semibold text-xs mono uppercase text-[#c8ff48]" for="cfBrand">Brand / Agency</label>
+              <input id="cfBrand" required placeholder="e.g. Adidas / Realme" class="w-full bg-[#121612] border border-[#2d382b] text-[#f5f8f2] text-sm px-4 py-3 rounded-xl focus:border-[#c8ff48] focus:outline-none transition-colors">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block mb-1.5 font-semibold text-xs mono uppercase text-[#c8ff48]" for="cfEmail">Email Address</label>
+              <input id="cfEmail" type="email" required placeholder="name@company.com" class="w-full bg-[#121612] border border-[#2d382b] text-[#f5f8f2] text-sm px-4 py-3 rounded-xl focus:border-[#c8ff48] focus:outline-none transition-colors">
+            </div>
+            <div>
+              <label class="block mb-1.5 font-semibold text-xs mono uppercase text-[#c8ff48]" for="cfType">Project Format</label>
+              <select id="cfType" class="w-full bg-[#121612] border border-[#2d382b] text-[#f5f8f2] text-sm px-4 py-3 rounded-xl focus:border-[#c8ff48] focus:outline-none transition-colors cursor-pointer">
+                <option value="Commercial Film (16:9)">Commercial Film (16:9)</option>
+                <option value="Brand Campaign & Social Reels (9:16)">Brand Campaign & Social Reels (9:16)</option>
+                <option value="End-to-End Direction & Shoot">End-to-End Direction & Shoot</option>
+                <option value="Post-Production, Color & VFX">Post-Production, Color & VFX</option>
+                <option value="Celebrity / BTS Feature">Celebrity / BTS Feature</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block mb-1.5 font-semibold text-xs mono uppercase text-[#c8ff48]" for="cfTimeline">Timeline &amp; Budget Range (Optional)</label>
+            <input id="cfTimeline" placeholder="e.g. Next month shoot / Flexible commercial budget" class="w-full bg-[#121612] border border-[#2d382b] text-[#f5f8f2] text-sm px-4 py-3 rounded-xl focus:border-[#c8ff48] focus:outline-none transition-colors">
+          </div>
+
+          <div>
+            <label class="block mb-1.5 font-semibold text-xs mono uppercase text-[#c8ff48]" for="cfMessage">Concept &amp; Project Message</label>
+            <textarea id="cfMessage" rows="4" required placeholder="Describe your vision, treatment ideas, deliverables, and shoot dates..." class="w-full bg-[#121612] border border-[#2d382b] text-[#f5f8f2] text-sm px-4 py-3 rounded-xl focus:border-[#c8ff48] focus:outline-none resize-none transition-colors"></textarea>
+          </div>
+
+          <button type="submit" id="submitBtn" class="lime-button w-full sm:w-auto font-black">
+            SEND COMMISSION BRIEF TO ROHAN &rarr;
+          </button>
+
+          <div id="formFeedback" class="hidden p-4 rounded-xl bg-[#111a11] border border-[#c8ff48]/40 mono text-xs text-[#f5f8f2] mt-3">
+            <p class="text-[#c8ff48] font-bold mb-1">&check; Prewritten commission brief ready!</p>
+            <p class="text-white/80 mb-2">Opening your mail client directly to <strong class="text-white">rohandongare97@gmail.com</strong> with all your filled details...</p>
+            <a id="fallbackMailLink" href="#" class="inline-block text-[#c8ff48] underline font-bold hover:text-white">Click here if your mail app didn't open automatically &rarr;</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="border-t rule px-5 sm:px-8 py-8 bg-black">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:justify-between items-center gap-4">
+      <span class="mark-face text-xl">youknowrd1</span>
+      <p class="mono text-xs text-[#a6b0a0]">&copy; <span id="year">2026</span> Rohan Dongare &bull; Filmmaker &bull; Video Editor &bull; Visual Storyteller</p>
+      
+      <div class="flex items-center gap-4">
+        <button onclick="replayShutter()" class="mono text-xs text-white/50 hover:text-[#c8ff48] transition-colors cursor-pointer">
+          Replay Intro Calibration ↺
+        </button>
+        <a href="#top" class="mono text-xs text-[#c8ff48] hover:underline">Back to top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       DYNAMIC ASPECT-RATIO VIMEO CINEMATIC SCREENING MODAL (ZERO VIMEO CONTROLS)
+       ========================================================================== -->
+  <div id="vimeoModal" class="vimeo-modal" onclick="closeVimeoModalOnBackdrop(event)">
+    <div id="vimeoModalWindow" class="vimeo-modal-window transition-all duration-300">
+      <div class="p-3.5 px-5 bg-[#0e120e] border-b rule flex items-center justify-between">
+        <div>
+          <h3 id="modalTitle" class="font-bold text-base sm:text-lg text-[#f5f8f2]">Project Title</h3>
+          <span id="modalCategory" class="mono text-[11px] text-[#c8ff48]">Brand Campaign</span>
+        </div>
+        <button onclick="closeVimeoModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center cursor-pointer text-lg">
+          &times;
+        </button>
+      </div>
+
+      <div id="modalVideoBox" class="relative w-full aspect-video bg-black overflow-hidden">
+        <iframe id="vimeoIframe" src="" class="w-full h-full border-0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div class="p-3.5 px-5 bg-[#070907] flex items-center justify-between mono text-xs text-white/60">
+        <span class="text-[11px]">PRESS ESC TO CLOSE</span>
+        <button onclick="closeVimeoModal()" class="outline-button py-1 px-3.5 text-xs">CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT: LIGHTNING ENGINE, SHUTTER WIPE & DOCKED WORDMARK
+       ========================================================================== -->
+  <script>
+    (() => {
+      'use strict';
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+      // ----------------------------------------------------------------------
+      // 1. ENHANCED REALISTIC PROCEDURAL LIGHTNING ENGINE (2-3 STRIKES / 3s)
+      // ----------------------------------------------------------------------
+      const canvas = document.getElementById('lightningCanvas');
+      const ctx = canvas.getContext('2d');
+      let activeBolts = [];
+      let ambientFlash = 0;
+      let isLightningActive = true;
+      let lightningRaf = null;
+      let lightningCycleTimeout = null;
+      let strikeTimers = [];
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      // Midpoint displacement generator for authentic lightning fractal geometry
+      function buildJaggedPath(x1, y1, x2, y2, displacement, iterations) {
+        let points = [{ x: x1, y: y1 }, { x: x2, y: y2 }];
+        for (let it = 0; it < iterations; it++) {
+          const newPoints = [];
+          for (let i = 0; i < points.length - 1; i++) {
+            const p1 = points[i];
+            const p2 = points[i + 1];
+            const midX = (p1.x + p2.x) / 2;
+            const midY = (p1.y + p2.y) / 2;
+
+            const dx = p2.x - p1.x;
+            const dy = p2.y - p1.y;
+            const len = Math.hypot(dx, dy) || 1;
+            const normalX = -dy / len;
+            const normalY = dx / len;
+
+            const disp = (Math.random() - 0.5) * displacement;
+            newPoints.push(p1);
+            newPoints.push({
+              x: midX + normalX * disp,
+              y: midY + normalY * disp
+            });
+          }
+          newPoints.push(points[points.length - 1]);
+          points = newPoints;
+          displacement *= 0.52;
+        }
+        return points;
+      }
+
+      function spawnRealisticStrike() {
+        if (!isLightningActive) return;
+
+        const startX = canvas.width * (0.22 + Math.random() * 0.56);
+        const startY = 0;
+        const groundX = startX + (Math.random() - 0.5) * (canvas.width * 0.3);
+        const groundY = canvas.height * (0.34 + Math.random() * 0.34);
+
+        // Main trunk: 4 iterations of midpoint displacement (~16 realistic jagged segments)
+        const mainPoints = buildJaggedPath(startX, startY, groundX, groundY, 65, 4);
+
+        const branches = [];
+        // 1 delicate branch branching off midway at natural acute angle
+        const branchIndex = Math.floor(mainPoints.length * (0.32 + Math.random() * 0.28));
+        if (mainPoints[branchIndex]) {
+          const bp = mainPoints[branchIndex];
+          const bEndX = bp.x + (Math.random() < 0.5 ? -1 : 1) * (45 + Math.random() * 65);
+          const bEndY = bp.y + (35 + Math.random() * 55);
+          const branchPoints = buildJaggedPath(bp.x, bp.y, bEndX, bEndY, 28, 3);
+          branches.push({ points: branchPoints });
+        }
+
+        const color = Math.random() < 0.28 ? '#00ffd5' : '#c8ff48';
+
+        activeBolts.push({
+          mainPoints,
+          branches,
+          color,
+          alpha: 1.0,
+          step: 0
+        });
+
+        ambientFlash = 0.045; // subtle atmospheric flash illumination
+
+        if (!lightningRaf && isLightningActive) {
+          lightningRaf = requestAnimationFrame(lightningLoop);
+        }
+      }
+
+      // Schedule strictly 2-3 discrete minimal strikes per 3-second cycle
+      function runLightningCycle() {
+        if (!isLightningActive) return;
+
+        strikeTimers.forEach(t => clearTimeout(t));
+        strikeTimers = [];
+
+        // 2 or 3 strikes per 3-second (3000ms) interval
+        const strikeCount = Math.random() < 0.5 ? 2 : 3;
+        const delays = strikeCount === 2
+          ? [500 + Math.random() * 300, 1900 + Math.random() * 350]
+          : [350 + Math.random() * 200, 1400 + Math.random() * 250, 2350 + Math.random() * 250];
+
+        delays.forEach(delay => {
+          const t = setTimeout(() => {
+            if (isLightningActive) spawnRealisticStrike();
+          }, delay);
+          strikeTimers.push(t);
+        });
+
+        lightningCycleTimeout = setTimeout(runLightningCycle, 3000);
+      }
+      runLightningCycle();
+
+      function drawPath(points) {
+        ctx.beginPath();
+        ctx.moveTo(points[0].x, points[0].y);
+        for (let i = 1; i < points.length; i++) {
+          ctx.lineTo(points[i].x, points[i].y);
+        }
+      }
+
+      function lightningLoop() {
+        if (!isLightningActive) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          lightningRaf = null;
+          return;
+        }
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Faint atmospheric flash behind the bolt
+        if (ambientFlash > 0.004) {
+          ctx.fillStyle = `rgba(200, 255, 72, ${ambientFlash})`;
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ambientFlash *= 0.65;
+        }
+
+        for (let i = activeBolts.length - 1; i >= 0; i--) {
+          const b = activeBolts[i];
+          b.step++;
+
+          // Natural return-stroke pulse (micro-flicker on frame 2 & 3, then smooth fast decay)
+          if (b.step === 2) {
+            b.alpha = 0.35;
+          } else if (b.step === 3) {
+            b.alpha = 0.95;
+          } else {
+            b.alpha -= 0.09;
+          }
+
+          if (b.alpha <= 0) {
+            activeBolts.splice(i, 1);
+            continue;
+          }
+
+          // 1. Outer Ionized Plasma Glow (lime/cyan neon)
+          ctx.strokeStyle = b.color === '#00ffd5'
+            ? `rgba(0, 255, 213, ${b.alpha * 0.75})`
+            : `rgba(200, 255, 72, ${b.alpha * 0.75})`;
+          ctx.lineWidth = 2.4;
+          ctx.shadowBlur = 9;
+          ctx.shadowColor = b.color;
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'miter';
+
+          drawPath(b.mainPoints);
+          ctx.stroke();
+
+          // Tender branch glow
+          b.branches.forEach(br => {
+            ctx.lineWidth = 1.3;
+            drawPath(br.points);
+            ctx.stroke();
+          });
+
+          // 2. High-Voltage Pure White Inner Core
+          ctx.strokeStyle = `rgba(255, 255, 255, ${Math.min(1, b.alpha * 1.15)})`;
+          ctx.lineWidth = 1.0;
+          ctx.shadowBlur = 3;
+          ctx.shadowColor = '#ffffff';
+
+          drawPath(b.mainPoints);
+          ctx.stroke();
+
+          b.branches.forEach(br => {
+            ctx.lineWidth = 0.55;
+            drawPath(br.points);
+            ctx.stroke();
+          });
+        }
+
+        if (activeBolts.length > 0 || ambientFlash > 0.004) {
+          lightningRaf = requestAnimationFrame(lightningLoop);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          lightningRaf = null;
+        }
+      }
+
+      // ----------------------------------------------------------------------
+      // 2. HIGH-SPEED COUNTER & STRICTLY MANUAL TRANSITION (ENTER KEY OR CLICK)
+      // ----------------------------------------------------------------------
+      const shutterRoot = document.getElementById('shutterRoot');
+      const counterEl = document.getElementById('calibrationPercent');
+      const statusEl = document.getElementById('calibrationStatus');
+      const openShutterBtn = document.getElementById('openShutterBtn');
+      const flashEl = document.getElementById('apertureFlash');
+      const heroVideo = document.getElementById('heroVideo');
+
+      let currentPercent = 0;
+      const statusStages = [
+        { at: 20, text: "CALIBRATING 35MM SENSOR MATRIX..." },
+        { at: 50, text: "CHARGING CAPACITORS &bull; 2.39:1 ANAMORPHIC..." },
+        { at: 80, text: "LOCKING 24.000 FPS AUDIO TIMECODE..." },
+        { at: 100, text: "100% // APERTURE CALIBRATED & READY" }
+      ];
+
+      function runCalibrationCounter() {
+        const interval = setInterval(() => {
+          currentPercent += Math.floor(Math.random() * 4) + 2;
+          if (currentPercent > 100) currentPercent = 100;
+          
+          counterEl.textContent = String(currentPercent).padStart(3, '0') + '%';
+
+          for (const s of statusStages) {
+            if (currentPercent >= s.at) statusEl.textContent = s.text;
+          }
+
+          if (currentPercent >= 100) {
+            clearInterval(interval);
+            openShutterBtn.classList.add('shadow-[0_0_50px_#c8ff48]', 'animate-pulse');
+            // STRICTLY MANUAL: NEVER AUTO-TRANSITIONS! Stays armed until Enter is triggered.
+          }
+        }, 28);
+      }
+      runCalibrationCounter();
+
+      // Hero Vimeo Background Player Engine
+      const heroVimeoIframe = document.getElementById('heroVimeoIframe');
+
+      function playApertureSound() {
+        try {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          const ctx = new AudioContext();
+          
+          const boom = ctx.createOscillator();
+          const boomGain = ctx.createGain();
+          boom.type = 'sine';
+          boom.frequency.setValueAtTime(65, ctx.currentTime);
+          boom.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.8);
+          boomGain.gain.setValueAtTime(0.14, ctx.currentTime);
+          boomGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.9);
+          boom.connect(boomGain);
+          boomGain.connect(ctx.destination);
+          boom.start();
+          boom.stop(ctx.currentTime + 1.0);
+
+          const sweep = ctx.createOscillator();
+          const sweepGain = ctx.createGain();
+          sweep.type = 'triangle';
+          sweep.frequency.setValueAtTime(120, ctx.currentTime);
+          sweep.frequency.exponentialRampToValueAtTime(1300, ctx.currentTime + 0.35);
+          sweepGain.gain.setValueAtTime(0.06, ctx.currentTime);
+          sweepGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.38);
+          sweep.connect(sweepGain);
+          sweepGain.connect(ctx.destination);
+          sweep.start();
+          sweep.stop(ctx.currentTime + 0.4);
+        } catch (_) {}
+      }
+
+      // Master Enter Function: ONLY executes upon user explicit action
+      function enterCinematicSuite() {
+        if (!shutterRoot) return;
+        if (shutterRoot.classList.contains('shutter-opened')) return;
+
+        try {
+          // Completely stop and wipe all lightning on the main page
+          isLightningActive = false;
+          if (lightningCycleTimeout) {
+            clearTimeout(lightningCycleTimeout);
+            lightningCycleTimeout = null;
+          }
+          if (Array.isArray(strikeTimers)) {
+            strikeTimers.forEach(t => clearTimeout(t));
+            strikeTimers = [];
+          }
+
+          if (lightningRaf) {
+            cancelAnimationFrame(lightningRaf);
+            lightningRaf = null;
+          }
+          activeBolts = [];
+          if (ctx && canvas) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            canvas.style.display = 'none';
+          }
+        } catch (e) {
+          console.warn('Lightning cleanup:', e);
+        }
+
+        try {
+          playApertureSound();
+        } catch (_) {}
+
+        if (flashEl) {
+          flashEl.classList.add('active');
+          setTimeout(() => flashEl.classList.remove('active'), 450);
+        }
+
+        // Trigger silky-smooth cinematic shutter opening
+        shutterRoot.classList.add('shutter-opened');
+        document.body.style.overflow = 'auto';
+
+        // Once the blades glide off-screen (1.3s), cleanly release DOM and resources
+        setTimeout(() => {
+          if (shutterRoot && shutterRoot.classList.contains('shutter-opened')) {
+            shutterRoot.style.display = 'none';
+          }
+        }, 1300);
+
+        try {
+          if (heroVimeoIframe && heroVimeoIframe.contentWindow) {
+            heroVimeoIframe.contentWindow.postMessage('{"method":"play"}', '*');
+          }
+        } catch (_) {}
+      }
+
+      window.enterCinematicSuite = enterCinematicSuite;
+
+      // Trigger 1: Click button
+      openShutterBtn.addEventListener('click', enterCinematicSuite);
+
+      // Trigger 2: Press Enter key on keyboard
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.code === 'Enter' || e.keyCode === 13) {
+          enterCinematicSuite();
+        }
+      });
+
+      window.replayShutter = function() {
+        if (shutterRoot) {
+          shutterRoot.style.display = 'block';
+          shutterRoot.classList.remove('shutter-opened');
+        }
+        currentPercent = 0;
+        isLightningActive = true;
+        if (canvas) canvas.style.display = 'block';
+        runLightningCycle();
+        runCalibrationCounter();
+      };
+
+      // ----------------------------------------------------------------------
+      // 3. 3D MOVING & ZOOMING PARALLAX WORDMARK
+      // ----------------------------------------------------------------------
+      const mark = document.getElementById('floating-mark');
+      const headerAnchor = document.getElementById('headerLogoAnchor');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let currentProgress = 0, targetProgress = 0, isTicking = false;
+      let mouseParallax = { x: 0, y: 0 };
+
+      const clamp = (val, min, max) => Math.min(max, Math.max(min, val));
+
+      function getHeaderLogoCoords() {
+        if (headerAnchor) {
+          const rect = headerAnchor.getBoundingClientRect();
+          return {
+            x: rect.left,
+            y: rect.top + (rect.height - 24) / 2
+          };
+        }
+        const isMobile = window.innerWidth < 768;
+        return { x: isMobile ? 20 : 32, y: 14 };
+      }
+
+      function paintMark(progress) {
+        if (reduceMotion.matches) return;
+
+        const isMobile = window.innerWidth < 768;
+        const startPos = getHeaderLogoCoords();
+
+        // Exact Start coordinates: Top-Left header logo alignment
+        const startX = startPos.x;
+        const startY = startPos.y;
+
+        // Final coordinates: Very end of bottom-right corner
+        const markWidth = isMobile ? 140 : 180;
+        const endX = window.innerWidth - markWidth - (isMobile ? 18 : 28);
+        const endY = window.innerHeight - (isMobile ? 48 : 56);
+
+        // Smooth translation across screen with sweeping arc
+        const t = progress;
+        const arcX = Math.sin(t * Math.PI) * (window.innerWidth * (isMobile ? 0.08 : 0.14));
+        const posX = startX + (endX - startX) * t + arcX;
+        const posY = startY + (endY - startY) * t;
+
+        // Dynamic 3D Zoom: gets significantly BIGGER when scrolled down, then smaller into bottom-right dock!
+        // At t=0: scale is 1.0 (header size)
+        // Mid-scroll (t ~ 0.45-0.55): swells up to ~2.4x scale across the viewport
+        // At t=1.0: returns down to docked size (0.95x) at bottom right
+        const peakZoom = Math.sin(Math.pow(t, 0.85) * Math.PI) * (isMobile ? 1.0 : 1.45);
+        const scale = 1.0 + peakZoom - (0.05 * t);
+
+        // 3D Perspective Rotation (Y, X, Z) with mouse parallax response
+        const rotY = -24 * Math.sin(t * Math.PI) + mouseParallax.x * 14;
+        const rotX = 14 * Math.sin(t * Math.PI) + mouseParallax.y * -10;
+        const rotZ = -4 * t;
+
+        mark.style.left = `${posX}px`;
+        mark.style.top = `${posY}px`;
+        mark.style.transform = `perspective(900px) rotateY(${rotY}deg) rotateX(${rotX}deg) rotateZ(${rotZ}deg) scale(${scale})`;
+      }
+
+      function stepTicker() {
+        currentProgress += (targetProgress - currentProgress) * 0.12;
+        paintMark(currentProgress);
+        if (Math.abs(targetProgress - currentProgress) > 0.001) {
+          requestAnimationFrame(stepTicker);
+        } else {
+          currentProgress = targetProgress;
+          paintMark(currentProgress);
+          isTicking = false;
+        }
+      }
+
+      function updateTarget() {
+        const threshold = Math.max(380, window.innerHeight * 0.7);
+        targetProgress = clamp(window.scrollY / threshold, 0, 1);
+        if (!isTicking) {
+          isTicking = true;
+          requestAnimationFrame(stepTicker);
+        }
+      }
+
+      window.addEventListener('mousemove', (e) => {
+        mouseParallax.x = (e.clientX / window.innerWidth) - 0.5;
+        mouseParallax.y = (e.clientY / window.innerHeight) - 0.5;
+        if (!isTicking) {
+          requestAnimationFrame(() => paintMark(currentProgress));
+        }
+      });
+
+      window.addEventListener('scroll', updateTarget, { passive: true });
+      window.addEventListener('resize', () => {
+        updateTarget();
+        paintMark(targetProgress);
+      });
+      updateTarget();
+      paintMark(0);
+
+      // ----------------------------------------------------------------------
+      // 4. HERO INACTIVITY AUTO-FADE (2 SECONDS)
+      // ----------------------------------------------------------------------
+      const hudLayer = document.getElementById('heroHudLayer');
+      let inactivityTimer = null;
+
+      function resetInactivity() {
+        hudLayer.classList.remove('faded');
+        clearTimeout(inactivityTimer);
+
+        if (window.scrollY < window.innerHeight * 0.6) {
+          inactivityTimer = setTimeout(() => {
+            hudLayer.classList.add('faded');
+          }, 2000);
+        }
+      }
+
+      window.addEventListener('mousemove', resetInactivity);
+      window.addEventListener('scroll', resetInactivity, { passive: true });
+      resetInactivity();
+
+      // ----------------------------------------------------------------------
+      // 5. HERO FULLSCREEN THEATER MODE
+      // ----------------------------------------------------------------------
+      const heroSection = document.getElementById('heroSection');
+      const fullscreenBtn = document.getElementById('toggleFullscreenBtn');
+      const fullscreenBtnText = document.getElementById('fullscreenBtnText');
+
+      fullscreenBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          if (heroSection.requestFullscreen) heroSection.requestFullscreen();
+          else if (heroSection.webkitRequestFullscreen) heroSection.webkitRequestFullscreen();
+          fullscreenBtnText.textContent = 'EXIT THEATER';
+        } else {
+          if (document.exitFullscreen) document.exitFullscreen();
+          fullscreenBtnText.textContent = 'FULLSCREEN THEATER';
+        }
+      });
+
+      document.addEventListener('fullscreenchange', () => {
+        fullscreenBtnText.textContent = document.fullscreenElement ? 'EXIT THEATER' : 'FULLSCREEN THEATER';
+      });
+
+      // ----------------------------------------------------------------------
+      // 6. HERO VIMEO SOUND & FULLSCREEN TOGGLE
+      // ----------------------------------------------------------------------
+      const soundBtn = document.getElementById('heroSoundBtn');
+      const soundIcon = document.getElementById('heroSoundIcon');
+      const soundText = document.getElementById('heroSoundText');
+      const heroIframe = document.getElementById('heroVimeoIframe');
+      let isHeroMuted = true;
+
+      soundBtn.addEventListener('click', () => {
+        isHeroMuted = !isHeroMuted;
+        if (heroIframe && heroIframe.contentWindow) {
+          heroIframe.contentWindow.postMessage(JSON.stringify({
+            method: 'setMuted',
+            value: isHeroMuted
+          }), '*');
+          heroIframe.contentWindow.postMessage(JSON.stringify({
+            method: 'setVolume',
+            value: isHeroMuted ? 0 : 1
+          }), '*');
+        }
+        soundIcon.textContent = isHeroMuted ? '🔇' : '🔊';
+        soundText.textContent = isHeroMuted ? 'UNMUTE' : 'MUTE';
+      });
+
+      // ----------------------------------------------------------------------
+      // 7. LIVE 24FPS HEADER TIMECODE
+      // ----------------------------------------------------------------------
+      const headerTimecode = document.getElementById('headerTimecode');
+      let f = 0, s = 18, m = 24, h = 1;
+      function tickTimecode() {
+        f++;
+        if (f >= 24) { f = 0; s++; if (s >= 60) { s = 0; m++; if (m >= 60) { m = 0; h++; } } }
+        const pad = (n) => n.toString().padStart(2, '0');
+        headerTimecode.textContent = `${pad(h)}:${pad(m)}:${pad(s)}:${pad(f)}`;
+      }
+      setInterval(tickTimecode, 1000 / 24);
+
+      // ----------------------------------------------------------------------
+      // 8. 3D PARALLAX MOUSE TILT ON PROJECT CARDS
+      // ----------------------------------------------------------------------
+      const cards = document.querySelectorAll('.project-card-3d');
+      const spotlight = document.getElementById('ambientSpotlight');
+
+      let spotlightRaf = null;
+      window.addEventListener('mousemove', (e) => {
+        if (!spotlightRaf) {
+          const x = e.clientX, y = e.clientY;
+          spotlightRaf = requestAnimationFrame(() => {
+            if (spotlight) spotlight.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+            spotlightRaf = null;
+          });
+        }
+      }, { passive: true });
+
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const deltaX = (x - centerX) / centerX;
+          const deltaY = (y - centerY) / centerY;
+
+          const rotX = -deltaY * 7;
+          const rotY = deltaX * 7;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-8px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+        });
+      });
+
+      // ----------------------------------------------------------------------
+      // 9. HIGH-PERFORMANCE SMART VIDEO STREAMING (ZERO LAG & GPU OPTIMIZED)
+      // ----------------------------------------------------------------------
+      const projectCards = document.querySelectorAll('.project-card-item');
+      const cardIframes = document.querySelectorAll('.project-card-item .video-host iframe');
+
+      // Use IntersectionObserver to only load video stream when scrolled near viewport
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const iframe = entry.target;
+          const targetSrc = iframe.getAttribute('data-src');
+          if (!targetSrc) return;
+
+          if (entry.isIntersecting) {
+            if (iframe.getAttribute('src') !== targetSrc) {
+              iframe.setAttribute('src', targetSrc);
+            }
+          } else {
+            // Unload distant offscreen iframes to free GPU decoders and keep 60 FPS
+            if (iframe.getAttribute('src') && iframe.getAttribute('src') !== '') {
+              iframe.setAttribute('src', '');
+            }
+          }
+        });
+      }, { rootMargin: '250px 0px 250px 0px', threshold: 0.05 });
+
+      cardIframes.forEach(iframe => videoObserver.observe(iframe));
+
+      // Instant preview on mouse hover
+      projectCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          const iframe = card.querySelector('.video-host iframe');
+          if (iframe) {
+            const targetSrc = iframe.getAttribute('data-src');
+            if (targetSrc && iframe.getAttribute('src') !== targetSrc) {
+              iframe.setAttribute('src', targetSrc);
+            }
+          }
+        }, { passive: true });
+      });
+
+      // ----------------------------------------------------------------------
+      // 10. DYNAMIC WORK CATEGORY FILTER (ALL, 16:9, 9:16 & BRANDS)
+      // ----------------------------------------------------------------------
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const commercialsSec = document.getElementById('commercialsSection');
+      const reelsSec = document.getElementById('reelsSection');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('active', 'border-[#c8ff48]', 'bg-[#c8ff48]', 'text-black');
+            b.classList.add('border-white/20', 'bg-[#0d120d]', 'text-white');
+          });
+          btn.classList.add('active', 'border-[#c8ff48]', 'bg-[#c8ff48]', 'text-black');
+          btn.classList.remove('border-white/20', 'bg-[#0d120d]', 'text-white');
+
+          const filterVal = btn.dataset.filter;
+          let visibleCount = 0;
+
+          projectCards.forEach(item => {
+            const aspect = item.dataset.aspect;
+            const brand = item.dataset.brand;
+
+            let show = false;
+            if (filterVal === 'all') show = true;
+            else if (filterVal === '16-9' && aspect === '16-9') show = true;
+            else if (filterVal === '9-16' && aspect === '9-16') show = true;
+            else if (filterVal === brand) show = true;
+
+            if (show) {
+              item.style.display = '';
+              visibleCount++;
+            } else {
+              item.style.display = 'none';
+            }
+          });
+
+          // Toggle section headers cleanly based on filter
+          if (filterVal === '9-16') {
+            commercialsSec.style.display = 'none';
+            reelsSec.style.display = 'block';
+          } else if (filterVal === '16-9') {
+            commercialsSec.style.display = 'block';
+            reelsSec.style.display = 'none';
+          } else {
+            commercialsSec.style.display = 'block';
+            reelsSec.style.display = 'block';
+          }
+        });
+      });
+
+      // ----------------------------------------------------------------------
+      // 11. DYNAMIC ASPECT-RATIO CINEMA MODAL
+      // ----------------------------------------------------------------------
+      const modal = document.getElementById('vimeoModal');
+      const modalWin = document.getElementById('vimeoModalWindow');
+      const modalBox = document.getElementById('modalVideoBox');
+      const iframe = document.getElementById('vimeoIframe');
+      const titleEl = document.getElementById('modalTitle');
+      const categoryEl = document.getElementById('modalCategory');
+
+      window.openVimeoModal = function(id, title, category, aspect) {
+        titleEl.textContent = title;
+        categoryEl.textContent = category;
+
+        if (aspect === '9/16') {
+          modalWin.style.maxWidth = '440px';
+          modalBox.style.aspectRatio = '9/16';
+        } else {
+          modalWin.style.maxWidth = '1080px';
+          modalBox.style.aspectRatio = '16/9';
+        }
+
+        iframe.src = `https://player.vimeo.com/video/${id}?autoplay=1&badge=0&byline=0&title=0&portrait=0&transparent=1&dnt=1`;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      };
+
+      window.closeVimeoModal = function() {
+        modal.classList.remove('active');
+        iframe.src = '';
+        document.body.style.overflow = '';
+      };
+
+      window.closeVimeoModalOnBackdrop = function(e) {
+        if (e.target.id === 'vimeoModal') {
+          window.closeVimeoModal();
+        }
+      };
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') window.closeVimeoModal();
+      });
+
+      // ----------------------------------------------------------------------
+      // 12. CONTACT FORM (PREWRITTEN DIRECT EMAIL GENERATION)
+      // ----------------------------------------------------------------------
+      const contactForm = document.getElementById('contactForm');
+      const formFeedback = document.getElementById('formFeedback');
+      const fallbackMailLink = document.getElementById('fallbackMailLink');
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('cfName').value.trim();
+        const brand = document.getElementById('cfBrand').value.trim();
+        const email = document.getElementById('cfEmail').value.trim();
+        const type = document.getElementById('cfType').value;
+        const timeline = document.getElementById('cfTimeline').value.trim();
+        const message = document.getElementById('cfMessage').value.trim();
+
+        const subject = `COMMISSION INQUIRY — ${brand || name} [${type}]`;
+        const body = `Hey Rohan,
+
+I would like to collaborate with you on an upcoming project.
+
+--- COMMISSION DETAILS ---
+Client / Brand: ${brand || 'N/A'}
+Contact Person: ${name}
+Email: ${email}
+Project Format: ${type}
+Timeline & Budget Scope: ${timeline || 'To be discussed'}
+
+--- CREATIVE BRIEF & CONCEPT ---
+${message}
+
+---
+Sent via youknowrd1.com official portfolio`;
+
+        const mailtoUrl = `mailto:rohandongare97@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        fallbackMailLink.href = mailtoUrl;
+        formFeedback.classList.remove('hidden');
+
+        // Immediately trigger mail client with prewritten brief
+        setTimeout(() => {
+          window.location.href = mailtoUrl;
+        }, 300);
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
