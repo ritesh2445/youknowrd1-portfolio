@@ -5,8 +5,7 @@
   "description": "Official cinematic portfolio of Rohan (youknowrd1) — Director, Editor & Visual Storyteller",
   "scripts": {
     "dev": "python -m http.server 4173",
-    "start": "python -m http.server 4173",
-    "build": "echo 'Static production site ready for Vercel deployment'"
+    "start": "python -m http.server 4173"
   },
   "keywords": [
     "portfolio",
