@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>youknowrd1 — Rohan | Director, Editor &amp; Visual Storyteller</title>
   <meta name="description" content="Official cinematic portfolio of Rohan (youknowrd1). Filmmaker and video editor with 4+ years creating high-octane campaigns for Realme, Adidas, H&amp;M, SNITCH, Asian Paints, Budweiser, Fabelle, and public figures.">
   <meta name="theme-color" content="#000000">
@@ -129,15 +129,16 @@
     /* Moving Wordmark: Accurately at Top-Left (not slightly down), Glides to Bottom-Right on scroll */
     .floating-mark {
       position: fixed;
-      z-index: 55;
-      pointer-events: none;
-      transform-origin: 0 50%;
+      z-index: 60;
+      pointer-events: auto;
+      transform-origin: 0 0;
       will-change: transform, left, top;
-      filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 18px rgba(200, 255, 72, 0.35));
       line-height: 1;
       margin: 0;
       padding: 0;
-      transition: opacity 0.4s ease;
+      cursor: pointer;
+      opacity: 1 !important;
+      visibility: visible !important;
     }
 
     /* Auto-Moving Infinite Logo Marquee */
@@ -479,6 +480,71 @@
       backface-visibility: hidden;
       will-change: transform;
     }
+
+    /* Modern Mobile & Safe-Area Optimizations */
+    :root {
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+      --sar: env(safe-area-inset-right, 0px);
+    }
+
+    /* Prevent annoying iOS tap grey flashes */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* iOS safe-area support for sticky header */
+    #siteHeader {
+      padding-top: max(0.5rem, var(--sat));
+      padding-left: max(0.5rem, var(--sal));
+      padding-right: max(0.5rem, var(--sar));
+    }
+
+    /* Responsive Marquee Pills on Mobile */
+    @media (max-width: 640px) {
+      .brand-logo-pill {
+        min-width: 140px !important;
+        height: 54px !important;
+        padding: 0.5rem 1.25rem !important;
+      }
+      .brand-logo-pill img {
+        max-height: 26px !important;
+        max-width: 95px !important;
+      }
+    }
+
+    /* Prevent mobile input auto-zoom on iOS (minimum 16px font-size) */
+    @media (max-width: 640px) {
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+    }
+
+    /* Touch-friendly active states */
+    @media (hover: none) {
+      .project-card-item:active {
+        transform: scale(0.985);
+        border-color: var(--lime);
+      }
+      .lime-button:active {
+        transform: scale(0.97);
+      }
+      .outline-button:active {
+        transform: scale(0.97);
+      }
+    }
+
+    /* Smooth Momentum Touch Scrolling for Filter Bar */
+    .touch-scroll-bar {
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      scrollbar-width: none;
+    }
+    .touch-scroll-bar::-webkit-scrollbar {
+      display: none;
+    }
+
   </style>
 </head>
 <body class="w-full bg-black">
@@ -502,11 +568,9 @@
 
     <!-- Center Badass HUD Stage -->
     <div id="shutterHud" class="shutter-hud">
-      <!-- 3D Chrome Title -->
-      <div class="mb-5 text-center">
-        <span class="mark-face text-[clamp(44px,10vw,120px)] block leading-none">
-          youknowrd1
-        </span>
+      <!-- 3D Chrome Official Logo Emblem -->
+      <div class="mb-5 text-center flex justify-center px-4">
+        <img src="assets/LOGO/youknowrd1_logo-1.png" alt="youknowrd1 official logo" class="w-[clamp(280px,75vw,560px)] max-w-full h-auto object-contain drop-shadow-[0_0_60px_rgba(200,255,72,0.7)] drop-shadow-[0_20px_45px_rgba(0,0,0,0.98)] filter brightness-115 select-none pointer-events-none">
       </div>
 
       <!-- High-Speed Counter Display with Lightning Spikes -->
@@ -551,11 +615,9 @@
       
       <!-- Wordmark Space (Top-Left aligned anchor) -->
       <div class="flex items-center gap-4">
-        <a id="headerLogoAnchor" class="flex items-center gap-3 text-decoration-none relative select-none" href="#top">
-          <!-- Width placeholder so layout remains rock-solid while floating mark sits at top-left -->
-          <span class="mark-face text-[24px] sm:text-[28px] opacity-0 select-none block leading-none pointer-events-none">
-            youknowrd1
-          </span>
+        <a id="headerLogoAnchor" class="flex items-center text-decoration-none relative select-none shrink-0" href="#top">
+          <!-- Layout footprint for docked floating logo -->
+          <img src="assets/LOGO/youknowrd1_logo-1.png" alt="youknowrd1 logo" class="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-0 pointer-events-none select-none">
         </a>
 
         <!-- Live Camera Telemetry HUD -->
@@ -567,15 +629,15 @@
         </div>
       </div>
       
-      <!-- Clean Navigation Links -->
-      <div class="flex gap-4 sm:gap-8 items-center mono text-sm">
-        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors" href="#work">Work</a>
-        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors" href="#brands">Brands</a>
-        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors" href="#about">About</a>
-        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors hidden sm:inline" href="#experience">Experience</a>
+      <!-- Clean Mobile-Optimized Navigation Links -->
+      <div class="flex gap-2.5 sm:gap-6 md:gap-8 items-center mono text-xs sm:text-sm">
+        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors py-1" href="#work">Work</a>
+        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors py-1 hidden xs:inline" href="#brands">Brands</a>
+        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors py-1" href="#about">About</a>
+        <a class="text-[#f5f8f2] hover:text-[#c8ff48] transition-colors hidden sm:inline py-1" href="#experience">Experience</a>
         
         <!-- Direct Prewritten Mail Trigger Button -->
-        <a class="lime-button py-2 px-6 text-xs font-bold" href="mailto:rohandongare97@gmail.com?subject=DIRECTOR%20%2F%20EDITOR%20COMMISSION%20%E2%80%94%20COMMERCIAL%20PROJECT&body=Hey%20Rohan%2C%0A%0AWe%20saw%20your%20cinematic%20portfolio%20and%20want%20to%20collaborate%20on%20an%20upcoming%20project.%0A%0AProject%20Scope%3A%20%5BCommercial%20Film%20%2F%20Brand%20Campaign%20%2F%20BTS%20Feature%5D%0ABrand%20%2F%20Client%3A%20%0AShoot%20Timeline%3A%20%0ABudget%20Scope%3A%20%0A%0ALet%27s%20create%20something%20legendary.%0A%0ABest%20regards%2C%0A%5BYour%20Name%20%2F%20Agency%5D">
+        <a class="lime-button py-1.5 sm:py-2 px-3.5 sm:px-6 text-[11px] sm:text-xs font-bold shrink-0" href="mailto:rohandongare97@gmail.com?subject=DIRECTOR%20%2F%20EDITOR%20COMMISSION%20%E2%80%94%20COMMERCIAL%20PROJECT&body=Hey%20Rohan%2C%0A%0AWe%20saw%20your%20cinematic%20portfolio%20and%20want%20to%20collaborate%20on%20an%20upcoming%20project.%0A%0AProject%20Scope%3A%20%5BCommercial%20Film%20%2F%20Brand%20Campaign%20%2F%20BTS%20Feature%5D%0ABrand%20%2F%20Client%3A%20%0AShoot%20Timeline%3A%20%0ABudget%20Scope%3A%20%0A%0ALet%27s%20create%20something%20legendary.%0A%0ABest%20regards%2C%0A%5BYour%20Name%20%2F%20Agency%5D">
           BOOK ROHAN
         </a>
       </div>
@@ -583,11 +645,11 @@
   </header>
 
   <!-- ==========================================================================
-       3D MOVING WORDMARK
-       (SITS PROPERLY AT TOP-LEFT, GLIDES TO VERY END OF BOTTOM-RIGHT ON SCROLL)
+       3D MOVING OFFICIAL LOGO
+       (SITS PROPERLY AT TOP-LEFT, GLIDES & GROWS SIGNIFICANTLY BIGGER ON SCROLL)
        ========================================================================== -->
-  <div id="floating-mark" class="floating-mark" aria-hidden="true">
-    <span class="mark-face text-[24px] sm:text-[28px] block leading-none">youknowrd1</span>
+  <div id="floating-mark" class="floating-mark flex items-center select-none cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="youknowrd1 — Return to Top" aria-label="youknowrd1 logo">
+    <img id="floatingLogoImg" src="assets/LOGO/youknowrd1_logo-1.png" alt="youknowrd1 logo" class="h-12 sm:h-16 md:h-20 w-auto object-contain select-none pointer-events-none" style="image-rendering: -webkit-optimize-contrast; filter: drop-shadow(0 0 18px rgba(200,255,72,0.65)) drop-shadow(0 4px 14px rgba(0,0,0,0.98)) brightness(1.12) contrast(1.1);">
   </div>
 
   <main id="top">
@@ -596,7 +658,7 @@
          HERO SECTION: 100% PURE FULLSCREEN UNCOMPRESSED VIDEO
          (NO POSTER IMAGE FLASH, PITCH BLACK BACKGROUND, VANISHES ON 2S IDLE)
          ========================================================================== -->
-    <section id="heroSection" class="relative w-screen h-screen overflow-hidden bg-black flex flex-col justify-end">
+    <section id="heroSection" class="relative w-screen h-[100svh] min-h-[520px] overflow-hidden bg-black flex flex-col justify-end">
       
       <!-- Fullscreen Background Vimeo Engine: Loads <1s, zero vimeo frame or controls -->
       <div class="absolute inset-0 w-full h-full overflow-hidden bg-black pointer-events-none">
@@ -736,41 +798,56 @@
           </p>
         </div>
 
-        <!-- Interactive Filter Bar -->
+                <!-- Interactive Filter Bar -->
         <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-3 mb-10 no-scrollbar select-none">
           <button class="filter-btn active mono text-xs font-bold px-4 py-2 rounded-full border border-[#c8ff48] bg-[#c8ff48] text-black transition-all cursor-pointer shrink-0" data-filter="all">
-            ALL WORKS (10)
+            ALL WORKS (24)
           </button>
           <button class="filter-btn mono text-xs font-bold px-4 py-2 rounded-full border border-white/20 bg-[#0d120d] text-white hover:border-[#c8ff48] transition-all cursor-pointer shrink-0" data-filter="16-9">
             16:9 COMMERCIALS (4)
           </button>
           <button class="filter-btn mono text-xs font-bold px-4 py-2 rounded-full border border-white/20 bg-[#0d120d] text-white hover:border-[#c8ff48] transition-all cursor-pointer shrink-0" data-filter="9-16">
-            9:16 VERTICAL REELS (6)
+            9:16 VERTICAL REELS (20)
           </button>
           <div class="h-5 w-px bg-white/20 shrink-0 mx-1"></div>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="celebrity">
+            CELEBRITY (5)
+          </button>
           <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="realme">
             REALME (3)
           </button>
           <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="adidas">
-            ADIDAS (1)
+            ADIDAS
           </button>
           <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="hm">
-            H&amp;M (1)
+            H&amp;M
           </button>
-          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="lenskart">
-            LENSKART
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="bonkers">
+            BONKERS (2)
+          </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="budweiser">
+            BUDWEISER
+          </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="shubman-gill">
+            SHUBMAN GILL (2)
+          </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="streetwear">
+            STREETWEAR (3)
+          </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="fashion">
+            FASHION &amp; JEWELRY (4)
+          </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="bts">
+            BTS &bull; CAMERA (3)
           </button>
           <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="asian-paints">
             ASIAN PAINTS
           </button>
+          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="lenskart">
+            LENSKART
+          </button>
           <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="yes-bank">
             YES BANK
-          </button>
-          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="bonkers">
-            BONKERS
-          </button>
-          <button class="filter-btn mono text-xs px-3.5 py-1.5 rounded-full border border-white/10 bg-[#070907] text-[#a6b0a0] hover:text-white hover:border-white/30 transition-all cursor-pointer shrink-0" data-filter="shubman-gill">
-            SHUBMAN GILL
           </button>
         </div>
 
@@ -1141,6 +1218,483 @@
               </div>
             </article>
 
+            <!-- 11. Disha Patani (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="celebrity" data-tags="celebrity fashion" data-vid="1236865364" onclick="openVimeoModal('1236865364', 'Disha Patani — Ivory Silk Editorial', 'Celebrity Fashion Film', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477333-c83f66fa9d4f73e04cf586c95858abcce1bb0c78efb2096537a3391906bd033d-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865364?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Disha Patani — Ivory Silk Editorial">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; DISHA PATANI
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Disha Patani</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Ivory silk editorial & warm tungsten cinematography</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 12. Sara Ali Khan (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="celebrity" data-tags="celebrity realme bts" data-vid="1236865365" onclick="openVimeoModal('1236865365', 'Sara Ali Khan — Studio Campaign Shoot', 'Commercial Campaign Shoot', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477372-390746d9978d301f63fe4d3aa40cf08d7a00fa3fcf26a044c27565e852397148-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865365?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Sara Ali Khan — Studio Campaign Shoot">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; SARA ALI KHAN
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Sara Ali Khan</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Red stage studio shoot & telemetry camera monitor</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 13. Bhumi Pednekar (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="celebrity" data-tags="celebrity fashion" data-vid="1236865371" onclick="openVimeoModal('1236865371', 'Bhumi Pednekar — Emerald Glamour', 'Celebrity Event & Fashion Reel', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477327-80eec832edd858fff9c5256055028e0b48473e7c74b29b83f90ce5340a2d0255-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865371?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Bhumi Pednekar — Emerald Glamour">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; BHUMI PEDNEKAR
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Bhumi Pednekar</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Emerald sequin couture & red carpet motion capture</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 14. Budweiser Festival Reel (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="budweiser" data-tags="budweiser lifestyle" data-vid="1236865377" onclick="openVimeoModal('1236865377', 'Budweiser — Electric Carnival & Festival Reel', 'Brand Activation & Experiential', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477387-4e66c68f8c48f03aa4d79529ef10078d4d8aaef9aedf95a6cbfd82c7b7bd261b-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865377?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Budweiser — Electric Carnival & Festival Reel">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; BUDWEISER
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Budweiser Carnival</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Electric neon carnival & festival night experience</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 15. Shubman Gill Dugout (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="shubman-gill" data-tags="shubman-gill celebrity" data-vid="1236865369" onclick="openVimeoModal('1236865369', 'Shubman Gill — Gujarat Titans Dugout Walk', 'Sports & Athlete Feature', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477400-34949ba3a14fafd8e0e57ed3d511a1415a0aa9b05b95ffd69055403360fd88f8-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865369?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Shubman Gill — Gujarat Titans Dugout Walk">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; SHUBMAN GILL
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Shubman Gill — Matchday</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">IPL 2024 dugout tunnel & athlete walkthrough</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 16. Bonkers Corner Store Launch (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="bonkers" data-tags="bonkers streetwear" data-vid="1236865361" onclick="openVimeoModal('1236865361', 'Bonkers Corner — Store Experience & Launch', 'Streetwear Retail Reel', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477493-d6ff3cdc0d785b514755e71f844dfd4302d66882d0d71e1450766bb3580a786f-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865361?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Bonkers Corner — Store Experience & Launch">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; BONKERS
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Bonkers Store Launch</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Retail store experience & streetwear youth culture</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 17. The Fit Check (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="streetwear" data-tags="streetwear fashion" data-vid="1236865379" onclick="openVimeoModal('1236865379', 'The Fit Check — Urban Streetwear Campaign', 'Streetwear & Fashion Reel', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477381-3f1f808ea8877489c383d1b0c5b551fa961ecef28394de2a27e6f25d7c6c8ba3-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865379?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="The Fit Check — Urban Streetwear Campaign">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; STREETWEAR
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">The Fit Check</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Urban streetwear styling & minimalist cyclorama</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 18. Pallavi Activewear (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="fashion" data-tags="fashion lifestyle" data-vid="1236865354" onclick="openVimeoModal('1236865354', 'Pallavi — Studio Silhouette & Motion', 'Fashion & Lifestyle Reel', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477402-afc7c239c6391386dd7d5ca54080fb92f2c8b32e8dd2720a5900de93ae2050e7-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865354?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Pallavi — Studio Silhouette & Motion">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; PALLAVI
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Pallavi — Silhouette</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Activewear editorial & fluid motion pacing</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 19. Noir Elegance Jewelry (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="fashion" data-tags="fashion" data-vid="1236865368" onclick="openVimeoModal('1236865368', 'Noir Elegance — Fine Jewelry Portrait', 'Fine Jewelry & High Fashion', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477351-b53e1d96dbff09c5624e0de620f36c060c4e314c12af919203b7a21508b1f57b-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865368?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Noir Elegance — Fine Jewelry Portrait">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; FINE JEWELRY
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Noir Elegance</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Chiaroscuro monochrome grading & diamond shimmer</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 20. Sony Venice 2 Raw Feed (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="bts" data-tags="bts celebrity" data-vid="1236864362" onclick="openVimeoModal('1236864362', 'Sony Venice 2 — Raw Camera Telemetry Feed', 'Cinema Camera Telemetry Reel', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213476112-377dcaa227341c510bea52d06aa9083c2cd0b7ffc985e08dd499061d9cb4b8ed-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236864362?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Sony Venice 2 — Raw Camera Telemetry Feed">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; VENICE 2 RAW
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Sony Venice 2 Feed</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">X-OCN XT camera telemetry & uncompressed cinema feed</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 21. Studio Production Light & Shadow (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="bts" data-tags="bts" data-vid="1236865362" onclick="openVimeoModal('1236865362', 'Studio Production BTS — Light & Shadow', 'Production & BTS Feature', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477439-59b0b7f545dc9e3439f4ced98cb4b2bcfb986980a1e55593034d18176ef4a54a-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865362?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Studio Production BTS — Light & Shadow">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; PRODUCTION BTS
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Studio Light & Shadow</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Behind the scenes lighting setups & studio craftsmanship</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 22. 4-Style Kinetic Motion (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="streetwear" data-tags="streetwear" data-vid="1236865376" onclick="openVimeoModal('1236865376', '4-Style — Kinetic Street Motion', 'Kinetic Motion & Streetwear Reel', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477436-860dc969eefe054639303a57d4e4f32bb1df3a44d212567b98d1a74a57715721-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865376?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="4-Style — Kinetic Street Motion">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; KINETIC TYPE
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">4-Style Kinetic Motion</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Bold typography, rhythmic audio cuts & street cadence</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 23. Audio Sanctuary (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="lifestyle" data-tags="lifestyle" data-vid="1236865363" onclick="openVimeoModal('1236865363', 'Audio Sanctuary — Sound & Lifestyle Mood', 'Lifestyle & Sound Design Reel', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213477348-bad50a6c44c7128e014013ef74b499cba9a86bd36cd45b76734f9736b3bcfee0-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236865363?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Audio Sanctuary — Sound & Lifestyle Mood">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; AUDIO &amp; MOOD
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Audio Sanctuary</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Vinyl HUD visualizer & intimate lifestyle mood edit</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- 24. Summer Red Natural Light (9:16) -->
+            <article class="project-card-item relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#0a0d0a] border border-white/10 hover:border-[#c8ff48] transition-all duration-300 group cursor-pointer shadow-2xl" data-aspect="9-16" data-brand="fashion" data-tags="fashion lifestyle" data-vid="1236866633" onclick="openVimeoModal('1236866633', 'Summer Red — Natural Light Portrait', 'Fashion & Portrait Reel', '9/16')">
+              <div class="video-host absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://i.vimeocdn.com/video/2213478782-df41eadfee5562f17ec7105d2ea8854447561f3544bdf1c35194dff9f7489207-d_960');">
+                <iframe
+                  src="" data-src="https://player.vimeo.com/video/1236866633?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1"
+                  class="absolute inset-0 w-full h-full border-0 pointer-events-none scale-[1.01]"
+                  allow="autoplay; fullscreen"
+                  loading="lazy"
+                  title="Summer Red — Natural Light Portrait">
+                </iframe>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40 pointer-events-none"></div>
+
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="mono text-[10px] font-bold text-[#c8ff48] bg-black/80 backdrop-blur-md border border-[#c8ff48]/40 px-3 py-1 rounded-full uppercase tracking-wider">
+                  9:16 REEL &bull; PORTRAIT
+                </span>
+                <span class="mono text-[10px] text-white/70 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#c8ff48] animate-pulse"></span>
+                  LIVE
+                </span>
+              </div>
+
+              <div class="absolute bottom-4 inset-x-4 flex items-end justify-between gap-3 pointer-events-none">
+                <div class="min-w-0">
+                  <h3 class="font-bold text-base sm:text-lg text-[#f5f8f2] group-hover:text-[#c8ff48] transition-colors drop-shadow-md truncate">Summer Red</h3>
+                  <p class="text-xs text-[#a6b0a0] mt-0.5 line-clamp-1">Golden afternoon warmth & cinematic lens breathing</p>
+                </div>
+                <button class="pointer-events-auto px-3.5 py-1.5 rounded-full bg-[#c8ff48] text-black font-bold mono text-xs hover:bg-white transition-all shadow-[0_0_15px_rgba(200,255,72,0.35)] flex items-center gap-1 shrink-0 cursor-pointer">
+                  <span>THEATER</span>
+                </button>
+              </div>
+            </article>
+
+
           </div>
         </div>
 
@@ -1344,7 +1898,7 @@
        ========================================================================== -->
   <footer class="border-t rule px-5 sm:px-8 py-8 bg-black">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:justify-between items-center gap-4">
-      <span class="mark-face text-xl">youknowrd1</span>
+      <a href="#top" class="inline-block"><img src="assets/LOGO/youknowrd1_logo-1.png" alt="youknowrd1 logo" class="h-8 sm:h-10 w-auto object-contain drop-shadow-[0_0_15px_rgba(200,255,72,0.35)] hover:scale-105 transition-transform"></a>
       <p class="mono text-xs text-[#a6b0a0]">&copy; <span id="year">2026</span> Rohan Dongare &bull; Filmmaker &bull; Video Editor &bull; Visual Storyteller</p>
       
       <div class="flex items-center gap-4">
@@ -1756,13 +2310,14 @@
       function getHeaderLogoCoords() {
         if (headerAnchor) {
           const rect = headerAnchor.getBoundingClientRect();
+          const markH = mark.offsetHeight || (window.innerWidth < 768 ? 48 : 64);
           return {
             x: rect.left,
-            y: rect.top + (rect.height - 24) / 2
+            y: rect.top + Math.max(0, (rect.height - markH) / 2)
           };
         }
         const isMobile = window.innerWidth < 768;
-        return { x: isMobile ? 20 : 32, y: 14 };
+        return { x: isMobile ? 16 : 28, y: 10 };
       }
 
       function paintMark(progress) {
@@ -1771,36 +2326,39 @@
         const isMobile = window.innerWidth < 768;
         const startPos = getHeaderLogoCoords();
 
-        // Exact Start coordinates: Top-Left header logo alignment
         const startX = startPos.x;
         const startY = startPos.y;
 
-        // Final coordinates: Very end of bottom-right corner
-        const markWidth = isMobile ? 140 : 180;
-        const endX = window.innerWidth - markWidth - (isMobile ? 18 : 28);
-        const endY = window.innerHeight - (isMobile ? 48 : 56);
+        const logoImg = document.getElementById('floatingLogoImg');
+        const renderedW = (logoImg && logoImg.offsetWidth) ? logoImg.offsetWidth : (isMobile ? 74 : 100);
+        const renderedH = (logoImg && logoImg.offsetHeight) ? logoImg.offsetHeight : (isMobile ? 48 : 64);
 
-        // Smooth translation across screen with sweeping arc
+        // Continuous Expansion: When scrolled down it gets MORE BIGGER and stays perfectly clear and visible
         const t = progress;
-        const arcX = Math.sin(t * Math.PI) * (window.innerWidth * (isMobile ? 0.08 : 0.14));
+        const maxScale = isMobile ? 1.65 : 2.25;
+        const scale = 1.0 + (maxScale - 1.0) * Math.pow(t, 0.75);
+
+        // Dynamically compute end position using current scale so it stays in safe bounds
+        const curW = renderedW * scale;
+        const curH = renderedH * scale;
+        const endX = window.innerWidth - curW - (isMobile ? 16 : 36);
+        const endY = window.innerHeight - curH - (isMobile ? 20 : 32);
+
+        // Sweeping graceful arc path across screen
+        const arcX = Math.sin(t * Math.PI) * (window.innerWidth * (isMobile ? 0.04 : 0.08));
         const posX = startX + (endX - startX) * t + arcX;
         const posY = startY + (endY - startY) * t;
 
-        // Dynamic 3D Zoom: gets significantly BIGGER when scrolled down, then smaller into bottom-right dock!
-        // At t=0: scale is 1.0 (header size)
-        // Mid-scroll (t ~ 0.45-0.55): swells up to ~2.4x scale across the viewport
-        // At t=1.0: returns down to docked size (0.95x) at bottom right
-        const peakZoom = Math.sin(Math.pow(t, 0.85) * Math.PI) * (isMobile ? 1.0 : 1.45);
-        const scale = 1.0 + peakZoom - (0.05 * t);
-
-        // 3D Perspective Rotation (Y, X, Z) with mouse parallax response
-        const rotY = -24 * Math.sin(t * Math.PI) + mouseParallax.x * 14;
-        const rotX = 14 * Math.sin(t * Math.PI) + mouseParallax.y * -10;
-        const rotZ = -4 * t;
+        // Elegant 3D tilt without edge blurring
+        const rotY = -12 * Math.sin(t * Math.PI) + mouseParallax.x * 10;
+        const rotX = 6 * Math.sin(t * Math.PI) + mouseParallax.y * -6;
+        const rotZ = -2.5 * t;
 
         mark.style.left = `${posX}px`;
         mark.style.top = `${posY}px`;
-        mark.style.transform = `perspective(900px) rotateY(${rotY}deg) rotateX(${rotX}deg) rotateZ(${rotZ}deg) scale(${scale})`;
+        mark.style.transform = `perspective(1000px) rotateY(${rotY}deg) rotateX(${rotX}deg) rotateZ(${rotZ}deg) scale(${scale})`;
+        mark.style.opacity = '1';
+        mark.style.display = 'flex';
       }
 
       function stepTicker() {
@@ -2024,12 +2582,13 @@
           projectCards.forEach(item => {
             const aspect = item.dataset.aspect;
             const brand = item.dataset.brand;
+            const tags = item.dataset.tags ? item.dataset.tags.split(' ') : [];
 
             let show = false;
             if (filterVal === 'all') show = true;
             else if (filterVal === '16-9' && aspect === '16-9') show = true;
             else if (filterVal === '9-16' && aspect === '9-16') show = true;
-            else if (filterVal === brand) show = true;
+            else if (filterVal === brand || tags.includes(filterVal)) show = true;
 
             if (show) {
               item.style.display = '';
@@ -2046,9 +2605,14 @@
           } else if (filterVal === '16-9') {
             commercialsSec.style.display = 'block';
             reelsSec.style.display = 'none';
-          } else {
+          } else if (filterVal === 'all') {
             commercialsSec.style.display = 'block';
             reelsSec.style.display = 'block';
+          } else {
+            const visCom = commercialsSec.querySelectorAll('.project-card-item:not([style*="display: none"])').length;
+            const visReel = reelsSec.querySelectorAll('.project-card-item:not([style*="display: none"])').length;
+            commercialsSec.style.display = visCom > 0 ? 'block' : 'none';
+            reelsSec.style.display = visReel > 0 ? 'block' : 'none';
           }
         });
       });
@@ -2067,12 +2631,15 @@
         titleEl.textContent = title;
         categoryEl.textContent = category;
 
+        const isMobile = window.innerWidth < 640;
         if (aspect === '9/16') {
-          modalWin.style.maxWidth = '440px';
+          modalWin.style.maxWidth = isMobile ? 'min(92vw, 360px)' : '420px';
           modalBox.style.aspectRatio = '9/16';
+          modalBox.style.maxHeight = isMobile ? '68vh' : '80vh';
         } else {
           modalWin.style.maxWidth = '1080px';
           modalBox.style.aspectRatio = '16/9';
+          modalBox.style.maxHeight = '';
         }
 
         iframe.src = `https://player.vimeo.com/video/${id}?autoplay=1&badge=0&byline=0&title=0&portrait=0&transparent=1&dnt=1`;
