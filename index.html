@@ -496,7 +496,8 @@
       /* contain: strict removed for continuous video autoplay */
     }
 
-    .video-host iframe {
+    .video-host iframe,
+    #heroVimeoIframe {
       transform: translateZ(0);
       -webkit-transform: translateZ(0);
       backface-visibility: hidden;
@@ -698,8 +699,8 @@
         </video>
         <iframe
           id="heroVimeoIframe"
-          src="https://player.vimeo.com/video/1235595188?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1&api=1"
-          class="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 object-cover border-0 transition-opacity duration-700 opacity-100"
+          src="https://player.vimeo.com/video/1235595188?autoplay=1&muted=1&loop=1&controls=0&byline=0&title=0&portrait=0&playsinline=1&transparent=1&dnt=1&quality=1080p&api=1"
+          class="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 object-cover border-0 transition-opacity duration-700 opacity-100 z-10"
           allow="autoplay; fullscreen; picture-in-picture"
           loading="eager"
           title="Hero Cinematic Showreel">
@@ -2303,6 +2304,7 @@
           const localVid = document.getElementById('heroLocalVideo');
           if (localVid) localVid.play().catch(() => {});
           if (heroVimeoIframe && heroVimeoIframe.contentWindow) {
+            heroVimeoIframe.contentWindow.postMessage('{"method":"setQuality","value":"1080p"}', '*');
             heroVimeoIframe.contentWindow.postMessage('{"method":"play"}', '*');
           }
         } catch (_) {}
@@ -2505,13 +2507,36 @@
       const soundIcon = document.getElementById('heroSoundIcon');
       const soundText = document.getElementById('heroSoundText');
       const heroIframe = document.getElementById('heroVimeoIframe');
+      const localVid = document.getElementById('heroLocalVideo');
       let isHeroMuted = true;
+
+      function initHeroVideo() {
+        if (!heroIframe || !heroIframe.contentWindow) return;
+        try {
+          heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'setQuality', value: '1080p' }), '*');
+          heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'setMuted', value: isHeroMuted }), '*');
+          heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'setVolume', value: isHeroMuted ? 0 : 1 }), '*');
+          heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'play' }), '*');
+        } catch (e) {}
+      }
+
+      if (heroIframe) {
+        heroIframe.addEventListener('load', () => {
+          initHeroVideo();
+          setTimeout(initHeroVideo, 400);
+          setTimeout(initHeroVideo, 1200);
+          setTimeout(() => {
+            if (localVid) localVid.style.display = 'none';
+          }, 1500);
+        });
+        initHeroVideo();
+      }
 
       soundBtn.addEventListener('click', () => {
         isHeroMuted = !isHeroMuted;
-        const localVid = document.getElementById('heroLocalVideo');
         if (localVid) localVid.muted = isHeroMuted;
         if (heroIframe && heroIframe.contentWindow) {
+          heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'setQuality', value: '1080p' }), '*');
           heroIframe.contentWindow.postMessage(JSON.stringify({
             method: 'setMuted',
             value: isHeroMuted
@@ -2626,6 +2651,7 @@
       let policyUnlocked = false;
       function unlockAutoplay() {
         playAllVideos();
+        initHeroVideo();
         if (!policyUnlocked) {
           policyUnlocked = true;
           ['scroll', 'wheel', 'touchstart', 'touchmove', 'click', 'keydown'].forEach(evt => {
