@@ -684,23 +684,12 @@
          ========================================================================== -->
     <section id="heroSection" class="relative w-screen h-[100svh] min-h-[520px] overflow-hidden bg-black flex flex-col justify-end">
       
-      <!-- Fullscreen Background Vimeo Engine: Loads <1s, zero vimeo frame or controls -->
+      <!-- Fullscreen Background Vimeo Engine: Direct 1080p high quality, zero low-res local video -->
       <div class="absolute inset-0 w-full h-full overflow-hidden bg-black pointer-events-none">
-        <video
-          id="heroLocalVideo"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-          poster="assets/hero-poster.jpg"
-          class="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 object-cover">
-          <source src="assets/hero-video.mp4" type="video/mp4">
-        </video>
         <iframe
           id="heroVimeoIframe"
-          src="https://player.vimeo.com/video/1235595188?autoplay=1&muted=1&loop=1&controls=0&byline=0&title=0&portrait=0&playsinline=1&transparent=1&dnt=1&quality=1080p&api=1"
-          class="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 object-cover border-0 transition-opacity duration-700 opacity-100 z-10"
+          src="https://player.vimeo.com/video/1235595188?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=0&dnt=1&quality=1080p&api=1"
+          class="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 border-0 transition-opacity duration-700 opacity-100"
           allow="autoplay; fullscreen; picture-in-picture"
           loading="eager"
           title="Hero Cinematic Showreel">
@@ -2301,8 +2290,6 @@
         }, 1300);
 
         try {
-          const localVid = document.getElementById('heroLocalVideo');
-          if (localVid) localVid.play().catch(() => {});
           if (heroVimeoIframe && heroVimeoIframe.contentWindow) {
             heroVimeoIframe.contentWindow.postMessage('{"method":"setQuality","value":"1080p"}', '*');
             heroVimeoIframe.contentWindow.postMessage('{"method":"play"}', '*');
@@ -2507,7 +2494,6 @@
       const soundIcon = document.getElementById('heroSoundIcon');
       const soundText = document.getElementById('heroSoundText');
       const heroIframe = document.getElementById('heroVimeoIframe');
-      const localVid = document.getElementById('heroLocalVideo');
       let isHeroMuted = true;
 
       function initHeroVideo() {
@@ -2525,16 +2511,12 @@
           initHeroVideo();
           setTimeout(initHeroVideo, 400);
           setTimeout(initHeroVideo, 1200);
-          setTimeout(() => {
-            if (localVid) localVid.style.display = 'none';
-          }, 1500);
         });
         initHeroVideo();
       }
 
       soundBtn.addEventListener('click', () => {
         isHeroMuted = !isHeroMuted;
-        if (localVid) localVid.muted = isHeroMuted;
         if (heroIframe && heroIframe.contentWindow) {
           heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'setQuality', value: '1080p' }), '*');
           heroIframe.contentWindow.postMessage(JSON.stringify({
