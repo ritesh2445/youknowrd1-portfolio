@@ -700,17 +700,6 @@
       
       <!-- Fullscreen Background Vimeo Engine: Loads instantly on loop -->
       <div class="absolute inset-0 w-full h-full overflow-hidden bg-black pointer-events-none">
-        <video
-          id="heroLocalVideo"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-          poster="assets/hero-poster.jpg"
-          class="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 object-cover">
-          <source src="assets/hero-video.mp4" type="video/mp4">
-        </video>
         <iframe
           id="heroVimeoIframe"
           src="https://player.vimeo.com/video/1235595188?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1&api=1"
@@ -2315,8 +2304,6 @@
         }, 1300);
 
         try {
-          const localVid = document.getElementById('heroLocalVideo');
-          if (localVid) localVid.play().catch(() => {});
           if (heroVimeoIframe && heroVimeoIframe.contentWindow) {
             heroVimeoIframe.contentWindow.postMessage('{"method":"play"}', '*');
           }
@@ -2542,8 +2529,6 @@
 
       soundBtn.addEventListener('click', () => {
         isHeroMuted = !isHeroMuted;
-        const localVid = document.getElementById('heroLocalVideo');
-        if (localVid) localVid.muted = isHeroMuted;
         if (heroIframe && heroIframe.contentWindow) {
           heroIframe.contentWindow.postMessage(JSON.stringify({
             method: 'setMuted',
@@ -2632,6 +2617,7 @@
 
       function playAllVideos() {
         allIframes.forEach(playIframeMuted);
+        if (heroIframe) playIframeMuted(heroIframe);
       }
 
       // 1. Kickstart immediately on iframe load
