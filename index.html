@@ -684,11 +684,11 @@
          ========================================================================== -->
     <section id="heroSection" class="relative w-screen h-[100svh] min-h-[520px] overflow-hidden bg-black flex flex-col justify-end">
       
-      <!-- Fullscreen Background Vimeo Engine: Direct 1080p high quality, zero low-res local video -->
-      <div class="absolute inset-0 w-full h-full overflow-hidden bg-black pointer-events-none">
+      <!-- Fullscreen Background Vimeo Engine: Loads instantly on loop -->
+      <div class="absolute inset-0 w-full h-full overflow-hidden bg-black bg-cover bg-center pointer-events-none" style="background-image: url('assets/hero-poster.jpg');">
         <iframe
           id="heroVimeoIframe"
-          src="https://player.vimeo.com/video/1235595188?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=0&dnt=1&quality=1080p&api=1"
+          src="https://player.vimeo.com/video/1235595188?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1&api=1"
           class="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 border-0 transition-opacity duration-700 opacity-100"
           allow="autoplay; fullscreen; picture-in-picture"
           loading="eager"
@@ -2291,7 +2291,6 @@
 
         try {
           if (heroVimeoIframe && heroVimeoIframe.contentWindow) {
-            heroVimeoIframe.contentWindow.postMessage('{"method":"setQuality","value":"1080p"}', '*');
             heroVimeoIframe.contentWindow.postMessage('{"method":"play"}', '*');
           }
         } catch (_) {}
@@ -2499,7 +2498,6 @@
       function initHeroVideo() {
         if (!heroIframe || !heroIframe.contentWindow) return;
         try {
-          heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'setQuality', value: '1080p' }), '*');
           heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'setMuted', value: isHeroMuted }), '*');
           heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'setVolume', value: isHeroMuted ? 0 : 1 }), '*');
           heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'play' }), '*');
@@ -2518,7 +2516,6 @@
       soundBtn.addEventListener('click', () => {
         isHeroMuted = !isHeroMuted;
         if (heroIframe && heroIframe.contentWindow) {
-          heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'setQuality', value: '1080p' }), '*');
           heroIframe.contentWindow.postMessage(JSON.stringify({
             method: 'setMuted',
             value: isHeroMuted
@@ -2589,7 +2586,7 @@
       // 9. CONTINUOUS MUTED AUTOPLAY ENGINE (ALL VIDEOS PLAY AUTOMATICALLY)
       // ----------------------------------------------------------------------
       const projectCards = document.querySelectorAll('.project-card-item');
-      const allIframes = Array.from(document.querySelectorAll('.video-host iframe'));
+      const allIframes = Array.from(document.querySelectorAll('.video-host iframe, #heroVimeoIframe'));
 
       const playCmd = JSON.stringify({ method: 'play' });
       const muteCmd = JSON.stringify({ method: 'setMuted', value: true });
