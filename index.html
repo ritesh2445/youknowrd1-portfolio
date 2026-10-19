@@ -700,6 +700,17 @@
       
       <!-- Fullscreen Background Vimeo Engine: Loads instantly on loop -->
       <div class="absolute inset-0 w-full h-full overflow-hidden bg-black pointer-events-none">
+        <video
+          id="heroLocalVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="assets/hero-poster.jpg"
+          class="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 object-cover">
+          <source src="assets/hero-video.mp4" type="video/mp4">
+        </video>
         <iframe
           id="heroVimeoIframe"
           src="https://player.vimeo.com/video/1235595188?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1&api=1"
@@ -2304,6 +2315,8 @@
         }, 1300);
 
         try {
+          const localVid = document.getElementById('heroLocalVideo');
+          if (localVid) localVid.play().catch(() => {});
           if (heroVimeoIframe && heroVimeoIframe.contentWindow) {
             heroVimeoIframe.contentWindow.postMessage('{"method":"play"}', '*');
           }
@@ -2529,6 +2542,8 @@
 
       soundBtn.addEventListener('click', () => {
         isHeroMuted = !isHeroMuted;
+        const localVid = document.getElementById('heroLocalVideo');
+        if (localVid) localVid.muted = isHeroMuted;
         if (heroIframe && heroIframe.contentWindow) {
           heroIframe.contentWindow.postMessage(JSON.stringify({
             method: 'setMuted',
@@ -2600,7 +2615,7 @@
       // 9. CONTINUOUS MUTED AUTOPLAY ENGINE (ALL VIDEOS PLAY AUTOMATICALLY)
       // ----------------------------------------------------------------------
       const projectCards = document.querySelectorAll('.project-card-item');
-      const allIframes = Array.from(document.querySelectorAll('.video-host iframe, #heroVimeoIframe'));
+      const allIframes = Array.from(document.querySelectorAll('.video-host iframe'));
 
       const playCmd = JSON.stringify({ method: 'play' });
       const muteCmd = JSON.stringify({ method: 'setMuted', value: true });
@@ -2640,20 +2655,10 @@
       setTimeout(playAllVideos, 1500);
       setTimeout(playAllVideos, 3000);
 
-      // 3. Browser Autoplay Policy Unlock: Trigger all videos on user interaction (debounced/unhook once unlocked)
-      let policyUnlocked = false;
-      function unlockAutoplay() {
-        playAllVideos();
-        initHeroVideo();
-        if (!policyUnlocked) {
-          policyUnlocked = true;
-          ['scroll', 'wheel', 'touchstart', 'touchmove', 'click', 'keydown'].forEach(evt => {
-            window.removeEventListener(evt, unlockAutoplay);
-          });
-        }
-      }
-      ['scroll', 'wheel', 'touchstart', 'touchmove', 'click', 'keydown'].forEach(evt => {
-        window.addEventListener(evt, unlockAutoplay, { passive: true });
+      // 3. Browser Autoplay Policy Unlock: Trigger all videos on any user scroll or gesture
+      const unlockEvents = ['scroll', 'wheel', 'touchstart', 'touchmove', 'click', 'keydown'];
+      unlockEvents.forEach(evt => {
+        window.addEventListener(evt, playAllVideos, { passive: true });
       });
 
       // 4. Viewport Observer: Whenever a card enters view, ensure it is playing
