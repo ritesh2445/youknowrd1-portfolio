@@ -504,7 +504,7 @@
       image-rendering: -webkit-optimize-contrast;
     }
 
-    #heroVimeoIframe {
+    #heroLocalVideo {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -512,6 +512,7 @@
       min-width: 100%;
       height: 56.25vw;
       min-height: 100%;
+      object-fit: cover;
       transform: translate(-50%, -50%) translateZ(0);
       -webkit-transform: translate(-50%, -50%) translateZ(0);
       backface-visibility: hidden;
@@ -698,16 +699,19 @@
          ========================================================================== -->
     <section id="heroSection" class="relative w-screen h-[100svh] min-h-[520px] overflow-hidden bg-black flex flex-col justify-end">
       
-      <!-- Fullscreen Background Vimeo Engine: Loads instantly on loop -->
+      <!-- Fullscreen High-Definition Video Engine: 0-Second Instant Playback -->
       <div class="absolute inset-0 w-full h-full overflow-hidden bg-black pointer-events-none">
-        <iframe
-          id="heroVimeoIframe"
-          src="https://player.vimeo.com/video/1235595188?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1&api=1"
-          class="border-0 transition-opacity duration-700 opacity-100"
-          allow="autoplay; fullscreen; picture-in-picture"
-          loading="eager"
-          title="Hero Cinematic Showreel">
-        </iframe>
+        <video
+          id="heroLocalVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="assets/hero-poster.jpg"
+          class="border-0 transition-opacity duration-700 opacity-100">
+          <source src="assets/bts2.mp4" type="video/mp4">
+        </video>
       </div>
 
       <!-- Anamorphic Laser Flare Accent -->
@@ -2189,7 +2193,7 @@
       const statusEl = document.getElementById('calibrationStatus');
       const openShutterBtn = document.getElementById('openShutterBtn');
       const flashEl = document.getElementById('apertureFlash');
-      const heroVideo = document.getElementById('heroVideo');
+      const heroVideo = document.getElementById('heroLocalVideo');
 
       let currentPercent = 0;
       const statusStages = [
@@ -2218,9 +2222,6 @@
         }, 28);
       }
       runCalibrationCounter();
-
-      // Hero Vimeo Background Player Engine
-      const heroVimeoIframe = document.getElementById('heroVimeoIframe');
 
       function playApertureSound() {
         try {
@@ -2304,9 +2305,8 @@
         }, 1300);
 
         try {
-          if (heroVimeoIframe && heroVimeoIframe.contentWindow) {
-            heroVimeoIframe.contentWindow.postMessage('{"method":"play"}', '*');
-          }
+          const heroVideo = document.getElementById('heroLocalVideo');
+          if (heroVideo) heroVideo.play().catch(() => {});
         } catch (_) {}
       }
 
@@ -2501,47 +2501,26 @@
       });
 
       // ----------------------------------------------------------------------
-      // 6. HERO VIMEO SOUND & FULLSCREEN TOGGLE
+      // 6. HERO VIDEO SOUND TOGGLE
       // ----------------------------------------------------------------------
       const soundBtn = document.getElementById('heroSoundBtn');
       const soundIcon = document.getElementById('heroSoundIcon');
       const soundText = document.getElementById('heroSoundText');
-      const heroIframe = document.getElementById('heroVimeoIframe');
+      const heroVideo = document.getElementById('heroLocalVideo');
       let isHeroMuted = true;
 
-      function initHeroVideo() {
-        if (!heroIframe || !heroIframe.contentWindow) return;
-        try {
-          heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'setMuted', value: isHeroMuted }), '*');
-          heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'setVolume', value: isHeroMuted ? 0 : 1 }), '*');
-          heroIframe.contentWindow.postMessage(JSON.stringify({ method: 'play' }), '*');
-        } catch (e) {}
-      }
-
-      if (heroIframe) {
-        heroIframe.addEventListener('load', () => {
-          initHeroVideo();
-          setTimeout(initHeroVideo, 400);
-          setTimeout(initHeroVideo, 1200);
+      if (soundBtn && heroVideo) {
+        soundBtn.addEventListener('click', () => {
+          isHeroMuted = !isHeroMuted;
+          heroVideo.muted = isHeroMuted;
+          if (!isHeroMuted) {
+            heroVideo.volume = 1;
+            heroVideo.play().catch(() => {});
+          }
+          soundIcon.textContent = isHeroMuted ? '🔇' : '🔊';
+          soundText.textContent = isHeroMuted ? 'UNMUTE' : 'MUTE';
         });
-        initHeroVideo();
       }
-
-      soundBtn.addEventListener('click', () => {
-        isHeroMuted = !isHeroMuted;
-        if (heroIframe && heroIframe.contentWindow) {
-          heroIframe.contentWindow.postMessage(JSON.stringify({
-            method: 'setMuted',
-            value: isHeroMuted
-          }), '*');
-          heroIframe.contentWindow.postMessage(JSON.stringify({
-            method: 'setVolume',
-            value: isHeroMuted ? 0 : 1
-          }), '*');
-        }
-        soundIcon.textContent = isHeroMuted ? '🔇' : '🔊';
-        soundText.textContent = isHeroMuted ? 'UNMUTE' : 'MUTE';
-      });
 
       // ----------------------------------------------------------------------
       // 7. LIVE 24FPS HEADER TIMECODE
@@ -2617,7 +2596,10 @@
 
       function playAllVideos() {
         allIframes.forEach(playIframeMuted);
-        if (heroIframe) playIframeMuted(heroIframe);
+        const heroLocal = document.getElementById('heroLocalVideo');
+        if (heroLocal && heroLocal.paused) {
+          heroLocal.play().catch(() => {});
+        }
       }
 
       // 1. Kickstart immediately on iframe load
