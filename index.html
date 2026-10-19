@@ -496,10 +496,24 @@
       /* contain: strict removed for continuous video autoplay */
     }
 
-    .video-host iframe,
-    #heroVimeoIframe {
+    .video-host iframe {
       transform: translateZ(0);
       -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      will-change: transform;
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    #heroVimeoIframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 177.78vh;
+      min-width: 100%;
+      height: 56.25vw;
+      min-height: 100%;
+      transform: translate(-50%, -50%) translateZ(0);
+      -webkit-transform: translate(-50%, -50%) translateZ(0);
       backface-visibility: hidden;
       will-change: transform;
       image-rendering: -webkit-optimize-contrast;
@@ -685,11 +699,11 @@
     <section id="heroSection" class="relative w-screen h-[100svh] min-h-[520px] overflow-hidden bg-black flex flex-col justify-end">
       
       <!-- Fullscreen Background Vimeo Engine: Loads instantly on loop -->
-      <div class="absolute inset-0 w-full h-full overflow-hidden bg-black bg-cover bg-center pointer-events-none" style="background-image: url('assets/hero-poster.jpg');">
+      <div class="absolute inset-0 w-full h-full overflow-hidden bg-black pointer-events-none">
         <iframe
           id="heroVimeoIframe"
           src="https://player.vimeo.com/video/1235595188?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&playsinline=1&transparent=1&dnt=1&api=1"
-          class="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 border-0 transition-opacity duration-700 opacity-100"
+          class="border-0 transition-opacity duration-700 opacity-100"
           allow="autoplay; fullscreen; picture-in-picture"
           loading="eager"
           title="Hero Cinematic Showreel">
