@@ -15,5 +15,8 @@
     "cinematography"
   ],
   "author": "Rohan Dongare",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
 }
